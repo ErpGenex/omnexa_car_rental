@@ -1,0 +1,30 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:VEH-{YYYY}-{#####}",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["plate_number", "vin", "model", "year", "category", "source_type", "company", "branch", "status"],
+ "fields": [
+  {"fieldname": "plate_number", "fieldtype": "Data", "label": "Plate Number", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "vin", "fieldtype": "Data", "label": "VIN / Chassis Number", "reqd": 1, "unique": 1},
+  {"fieldname": "model", "fieldtype": "Data", "label": "Model", "reqd": 1},
+  {"fieldname": "year", "fieldtype": "Int", "label": "Year"},
+  {"fieldname": "category", "fieldtype": "Select", "label": "Category", "options": "Economy\nSUV\nLuxury\nTruck", "reqd": 1},
+  {"fieldname": "source_type", "fieldtype": "Select", "label": "Vehicle Source Type", "options": "OWNED\nLEASED_FROM_SUPPLIER\nREVENUE_SHARE_PARTNER\nFINANCED", "reqd": 1, "default": "OWNED"},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Branch", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Available\nRented\nMaintenance\nOut of Service", "default": "Available", "reqd": 1, "in_list_view": 1}
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "module": "Omnexa Car Rental",
+ "name": "Vehicle",
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1}
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
+

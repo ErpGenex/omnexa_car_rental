@@ -1,0 +1,25 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:INS-{YYYY}-{#####}",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": ["vehicle", "company", "branch", "policy_number", "provider", "coverage_type", "start_date", "end_date", "premium_amount", "status"],
+ "fields": [
+  {"fieldname": "vehicle", "fieldtype": "Link", "label": "Vehicle", "options": "Vehicle", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Branch", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "policy_number", "fieldtype": "Data", "label": "Policy Number", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "provider", "fieldtype": "Link", "label": "Insurance Provider", "options": "Supplier"},
+  {"fieldname": "coverage_type", "fieldtype": "Select", "label": "Coverage Type", "options": "Full\nPartial\nNone", "default": "Partial"},
+  {"fieldname": "start_date", "fieldtype": "Date", "label": "Start Date", "reqd": 1},
+  {"fieldname": "end_date", "fieldtype": "Date", "label": "End Date", "reqd": 1},
+  {"fieldname": "premium_amount", "fieldtype": "Currency", "label": "Premium Amount", "default": "0"},
+  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nActive\nExpired\nCancelled", "default": "Draft", "in_list_view": 1}
+ ],
+ "module": "Omnexa Car Rental",
+ "name": "Vehicle Insurance Policy",
+ "permissions": [{"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1}],
+ "track_changes": 1
+}
+
