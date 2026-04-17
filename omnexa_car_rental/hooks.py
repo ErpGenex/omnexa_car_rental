@@ -82,7 +82,8 @@ add_to_apps_screen = [
 # ------------
 
 # before_install = "omnexa_car_rental.install.before_install"
-# after_install = "omnexa_car_rental.install.after_install"
+after_install = "omnexa_car_rental.install.after_install"
+after_migrate = "omnexa_car_rental.install.after_migrate"
 
 # Uninstallation
 # ------------
@@ -117,6 +118,7 @@ add_to_apps_screen = [
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
+	"Toll Provider": "omnexa_car_rental.permissions.toll_provider_query_conditions",
 	"Vehicle": "omnexa_car_rental.permissions.vehicle_query_conditions",
 	"Rental Booking": "omnexa_car_rental.permissions.rental_booking_query_conditions",
 	"Rental Contract": "omnexa_car_rental.permissions.rental_contract_query_conditions",
@@ -126,6 +128,9 @@ permission_query_conditions = {
 	"Vehicle Fuel Log": "omnexa_car_rental.permissions.vehicle_fuel_log_query_conditions",
 	"Vehicle Damage Report": "omnexa_car_rental.permissions.vehicle_damage_report_query_conditions",
 	"Vehicle Insurance Policy": "omnexa_car_rental.permissions.vehicle_insurance_policy_query_conditions",
+	"Toll Transaction": "omnexa_car_rental.permissions.toll_transaction_query_conditions",
+	"Toll Allocation Rule": "omnexa_car_rental.permissions.toll_allocation_rule_query_conditions",
+	"Toll Invoice Line": "omnexa_car_rental.permissions.toll_invoice_line_query_conditions",
 }
 #
 # has_permission = {
@@ -139,6 +144,10 @@ permission_query_conditions = {
 # override_doctype_class = {
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
+
+override_doctype_dashboards = {
+	"Vehicle": "omnexa_car_rental.omnexa_car_rental.dashboard.vehicle_dashboard.get_vehicle_dashboard_data",
+}
 
 # Document Events
 # ---------------
@@ -181,28 +190,37 @@ doc_events = {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
 		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
 	},
+	"Toll Transaction": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
+	"Toll Allocation Rule": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
+	"Toll Invoice Line": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
 }
 
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"omnexa_car_rental.tasks.all"
-# 	],
-# 	"daily": [
-# 		"omnexa_car_rental.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"omnexa_car_rental.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"omnexa_car_rental.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"omnexa_car_rental.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"cron": {
+		"*/15 * * * *": [
+			"omnexa_car_rental.toll_tasks.poll_toll_providers",
+			"omnexa_car_rental.toll_tasks.process_unmatched_toll_queue",
+		],
+		"5 4 1 * *": [
+			"omnexa_car_rental.toll_tasks.run_scheduled_monthly_toll_billing",
+		],
+	},
+	"daily": [
+		"omnexa_car_rental.fleet_reminders.run_daily",
+	],
+}
 
 # Testing
 # -------

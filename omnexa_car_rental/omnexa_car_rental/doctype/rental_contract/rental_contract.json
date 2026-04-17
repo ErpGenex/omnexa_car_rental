@@ -19,13 +19,19 @@
   {"fieldname": "early_return_policy", "fieldtype": "Small Text", "label": "Early Return Policy"},
   {"fieldname": "deposit_amount", "fieldtype": "Currency", "label": "Security Deposit", "default": "0"},
   {"fieldname": "insurance_coverage", "fieldtype": "Select", "label": "Insurance Coverage", "options": "Full\nPartial\nNone", "default": "Partial"},
-  {"fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nActive Rental\nReturned\nClosed\nCancelled", "default": "Draft", "reqd": 1, "in_list_view": 1},
+  {"allow_on_submit": 1, "fieldname": "status", "fieldtype": "Select", "label": "Status", "options": "Draft\nActive Rental\nReturned\nClosed\nCancelled", "default": "Draft", "reqd": 1, "in_list_view": 1},
   {"fieldname": "total_amount", "fieldtype": "Currency", "label": "Total Amount", "default": "0"}
  ],
  "is_submittable": 1,
+ "links": [{"group": "Booking", "link_doctype": "Rental Booking", "link_fieldname": "booking"}],
  "module": "Omnexa Car Rental",
  "name": "Rental Contract",
- "permissions": [{"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1}],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "submit": 1, "cancel": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Rental Agent", "read": 1, "write": 1, "create": 1, "delete": 0, "submit": 1, "cancel": 0, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Accountant", "read": 1, "write": 0, "create": 0, "delete": 0, "print": 1, "email": 1, "export": 1, "report": 1, "share": 0}
+ ],
  "track_changes": 1
 }
 

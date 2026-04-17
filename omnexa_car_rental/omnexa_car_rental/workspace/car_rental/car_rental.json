@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"cr-h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Car Rental & Fleet Management</b></span>\",\"col\":12}},{\"id\":\"cr-c1\",\"type\":\"card\",\"data\":{\"card_name\":\"Fleet Core\",\"col\":4}},{\"id\":\"cr-c2\",\"type\":\"card\",\"data\":{\"card_name\":\"Rental Operations\",\"col\":4}},{\"id\":\"cr-c3\",\"type\":\"card\",\"data\":{\"card_name\":\"Risk & Cost Control\",\"col\":4}},{\"id\":\"cr-c4\",\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":4}}]",
+ "content": "[{\"id\":\"cr-h1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Car Rental & Fleet Management</b></span><br><span class=\\\"text-muted\\\">Fleet, contracts, toll gateways, billing, and analytics.</span>\",\"col\":12}},{\"id\":\"cr-s1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rental Booking\",\"col\":3}},{\"id\":\"cr-s2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Rental Contract\",\"col\":3}},{\"id\":\"cr-s3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Vehicle\",\"col\":3}},{\"id\":\"cr-s4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Toll Transaction\",\"col\":3}},{\"id\":\"cr-s5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer Profile\",\"col\":3}},{\"id\":\"cr-sp1\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"cr-c1\",\"type\":\"card\",\"data\":{\"card_name\":\"Fleet Core\",\"col\":4}},{\"id\":\"cr-c2\",\"type\":\"card\",\"data\":{\"card_name\":\"Rental Operations\",\"col\":4}},{\"id\":\"cr-c-com\",\"type\":\"card\",\"data\":{\"card_name\":\"Commercial & Billing\",\"col\":4}},{\"id\":\"cr-c-tg\",\"type\":\"card\",\"data\":{\"card_name\":\"Toll & Gateways\",\"col\":4}},{\"id\":\"cr-c3\",\"type\":\"card\",\"data\":{\"card_name\":\"Risk & Cost Control\",\"col\":4}},{\"id\":\"cr-c-fr\",\"type\":\"card\",\"data\":{\"card_name\":\"Fleet & Rental Reports\",\"col\":4}},{\"id\":\"cr-c-fin\",\"type\":\"card\",\"data\":{\"card_name\":\"Finance & Ledger Reports\",\"col\":4}}]",
  "custom_blocks": [],
  "docstatus": 0,
  "doctype": "Workspace",
@@ -11,6 +11,7 @@
  "label": "Car Rental",
  "links": [
   {"hidden": 0, "label": "Fleet Core", "type": "Card Break"},
+  {"hidden": 0, "icon": "organization", "label": "Branch", "link_to": "Branch", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "truck", "label": "Vehicle", "link_to": "Vehicle", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "users", "label": "Rental Driver", "link_to": "Rental Driver", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "shield", "label": "Vehicle Insurance Policy", "link_to": "Vehicle Insurance Policy", "link_type": "DocType", "type": "Link"},
@@ -18,14 +19,29 @@
   {"hidden": 0, "icon": "calendar", "label": "Rental Booking", "link_to": "Rental Booking", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "file-text", "label": "Rental Contract", "link_to": "Rental Contract", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "briefcase", "label": "Supplier Fleet Contract", "link_to": "Supplier Fleet Contract", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "label": "Commercial & Billing", "type": "Card Break"},
+  {"hidden": 0, "icon": "customer", "label": "Customer Profile", "link_to": "Customer Profile", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "company", "label": "Company", "link_to": "Company", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "file", "label": "Sales Invoice", "link_to": "Sales Invoice", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "wallet", "label": "Payment Entry", "link_to": "Payment Entry", "link_type": "DocType", "type": "Link"},
+  {"description": "<p class=\"text-muted\">Toll authorities and road networks (e.g. UAE Salik/DARB, other regional gateways). Ingest transactions via API/scheduler, then allocate costs with rules. Set <b>Toll Tag ID</b> on Vehicle and configure <b>Toll Provider</b> records.</p>", "hidden": 0, "icon": "map", "label": "Toll & Gateways", "type": "Card Break"},
+  {"hidden": 0, "icon": "map", "label": "Toll Provider", "link_to": "Toll Provider", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "filter", "label": "Toll Allocation Rule", "link_to": "Toll Allocation Rule", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "activity", "label": "Toll Transaction", "link_to": "Toll Transaction", "link_type": "DocType", "type": "Link"},
+  {"hidden": 0, "icon": "file-text", "label": "Toll Invoice Line", "link_to": "Toll Invoice Line", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "label": "Risk & Cost Control", "type": "Card Break"},
   {"hidden": 0, "icon": "tool", "label": "Vehicle Maintenance Record", "link_to": "Vehicle Maintenance Record", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "droplet", "label": "Vehicle Fuel Log", "link_to": "Vehicle Fuel Log", "link_type": "DocType", "type": "Link"},
   {"hidden": 0, "icon": "alert-triangle", "label": "Vehicle Damage Report", "link_to": "Vehicle Damage Report", "link_type": "DocType", "type": "Link"},
-  {"hidden": 0, "label": "Reports", "type": "Card Break"},
+  {"hidden": 0, "label": "Fleet & Rental Reports", "type": "Card Break"},
   {"hidden": 0, "icon": "activity", "is_query_report": 1, "label": "Fleet Utilization", "link_to": "Fleet Utilization", "link_type": "Report", "type": "Link"},
   {"hidden": 0, "icon": "bar-chart-2", "is_query_report": 1, "label": "Revenue per Vehicle", "link_to": "Revenue per Vehicle", "link_type": "Report", "type": "Link"},
-  {"hidden": 0, "icon": "pie-chart", "is_query_report": 1, "label": "Maintenance Cost Analysis", "link_to": "Maintenance Cost Analysis", "link_type": "Report", "type": "Link"}
+  {"hidden": 0, "icon": "pie-chart", "is_query_report": 1, "label": "Maintenance Cost Analysis", "link_to": "Maintenance Cost Analysis", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "icon": "map-pin", "is_query_report": 1, "label": "Toll Cost Summary", "link_to": "Toll Cost Summary", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "label": "Finance & Ledger Reports", "type": "Card Break"},
+  {"hidden": 0, "icon": "file-text", "is_query_report": 1, "label": "Sales Register", "link_to": "Sales Register", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "icon": "list", "is_query_report": 1, "label": "Customer Ledger", "link_to": "Customer Ledger", "link_type": "Report", "type": "Link"},
+  {"hidden": 0, "icon": "book", "is_query_report": 1, "label": "General Ledger", "link_to": "General Ledger", "link_type": "Report", "type": "Link"}
  ],
  "module": "Omnexa Car Rental",
  "name": "Car Rental",
@@ -34,7 +50,12 @@
  "quick_lists": [],
  "roles": [],
  "sequence_id": 8.21,
- "shortcuts": [],
+ "shortcuts": [
+  {"color": "Blue", "doc_view": "List", "label": "Rental Booking", "link_to": "Rental Booking", "type": "DocType"},
+  {"color": "Green", "doc_view": "List", "label": "Rental Contract", "link_to": "Rental Contract", "type": "DocType"},
+  {"color": "Grey", "doc_view": "List", "label": "Vehicle", "link_to": "Vehicle", "type": "DocType"},
+  {"color": "Orange", "doc_view": "List", "label": "Toll Transaction", "link_to": "Toll Transaction", "type": "DocType"},
+  {"color": "Cyan", "doc_view": "List", "label": "Customer Profile", "link_to": "Customer Profile", "type": "DocType"}
+ ],
  "title": "Car Rental"
 }
-

@@ -83,3 +83,82 @@ def kpi_maintenance_cost_mtd():
 	)[0][0]
 	return {"value": flt(value), "fieldtype": "Currency", "route": ["List", "Vehicle Maintenance Record"]}
 
+
+@frappe.whitelist()
+def toll_run_matching(toll_transaction: str, allow_last_known_renter: int = 1):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import run_matching
+
+	return run_matching(toll_transaction, allow_last_known_renter=bool(cint(allow_last_known_renter)))
+
+
+@frappe.whitelist()
+def toll_create_customer_invoice(toll_transaction: str):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import create_recharge_sales_invoice
+
+	return create_recharge_sales_invoice(toll_transaction)
+
+
+@frappe.whitelist()
+def toll_apply_fx(toll_transaction: str):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import apply_fx_to_company_currency
+
+	apply_fx_to_company_currency(toll_transaction)
+	return {"ok": True}
+
+
+@frappe.whitelist()
+def toll_ingest_batch_file(file_name: str, provider_code: str):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_ingestion import ingest_batch_file
+
+	return ingest_batch_file(file_name, provider_code)
+
+
+@frappe.whitelist()
+def toll_create_journal_entry(toll_transaction: str):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import create_toll_journal_entry
+
+	return create_toll_journal_entry(toll_transaction)
+
+
+@frappe.whitelist()
+def toll_run_monthly_consolidation(year: int, month: int, company: str | None = None, dry_run: int = 0):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import run_monthly_consolidated_billing
+
+	return run_monthly_consolidated_billing(
+		int(year), int(month), company=company or None, dry_run=bool(cint(dry_run))
+	)
+
+
+@frappe.whitelist()
+def toll_run_previous_month_consolidation(company: str | None = None):
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import run_previous_month_consolidation
+
+	return run_previous_month_consolidation(company=company or None)
+
+
+@frappe.whitelist()
+def create_rental_contract_from_booking(booking: str):
+	"""Create a draft Rental Contract from a confirmed (or inquiry) booking."""
+	b = frappe.get_doc("Rental Booking", booking)
+	if b.booking_status == "Cancelled":
+		frappe.throw(frappe._("Cancelled booking cannot be converted."), title=frappe._("Booking"))
+	if b.rental_contract:
+		return b.rental_contract
+
+	c = frappe.get_doc(
+		{
+			"doctype": "Rental Contract",
+			"booking": b.name,
+			"customer_profile": b.customer_profile,
+			"vehicle": b.vehicle,
+			"company": b.company,
+			"branch": b.branch,
+			"rental_mode": b.rental_mode,
+			"contract_start": b.start_datetime,
+			"contract_end": b.end_datetime,
+			"status": "Draft",
+		}
+	)
+	c.insert()
+	return c.name
+

@@ -4,7 +4,7 @@
  "autoname": "format:RBK-{YYYY}-{#####}",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": ["customer_profile", "vehicle", "company", "branch", "rental_type", "rental_mode", "start_datetime", "end_datetime", "booking_status", "currency", "estimated_amount"],
+ "field_order": ["customer_profile", "vehicle", "company", "branch", "rental_type", "rental_mode", "start_datetime", "end_datetime", "booking_status", "rental_contract", "currency", "estimated_amount"],
  "fields": [
   {"fieldname": "customer_profile", "fieldtype": "Link", "label": "Customer Profile", "options": "Customer Profile", "reqd": 1, "in_list_view": 1},
   {"fieldname": "vehicle", "fieldtype": "Link", "label": "Vehicle", "options": "Vehicle", "reqd": 1, "in_list_view": 1},
@@ -15,12 +15,18 @@
   {"fieldname": "start_datetime", "fieldtype": "Datetime", "label": "Start Date-Time", "reqd": 1},
   {"fieldname": "end_datetime", "fieldtype": "Datetime", "label": "End Date-Time", "reqd": 1},
   {"fieldname": "booking_status", "fieldtype": "Select", "label": "Booking Status", "options": "Inquiry\nConfirmed\nCancelled\nConverted", "default": "Inquiry", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "rental_contract", "fieldtype": "Link", "label": "Rental Contract", "options": "Rental Contract", "read_only": 1},
   {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency"},
   {"fieldname": "estimated_amount", "fieldtype": "Currency", "label": "Estimated Amount", "default": "0"}
  ],
  "module": "Omnexa Car Rental",
  "name": "Rental Booking",
- "permissions": [{"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1}],
+ "permissions": [
+  {"role": "System Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Fleet Manager", "read": 1, "write": 1, "create": 1, "delete": 1, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Rental Agent", "read": 1, "write": 1, "create": 1, "delete": 0, "print": 1, "email": 1, "export": 1, "report": 1, "share": 1},
+  {"role": "Accountant", "read": 1, "write": 0, "create": 0, "delete": 0, "print": 1, "email": 1, "export": 1, "report": 1, "share": 0}
+ ],
  "track_changes": 1
 }
 

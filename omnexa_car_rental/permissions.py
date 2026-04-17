@@ -61,3 +61,20 @@ def vehicle_damage_report_query_conditions(user=None):
 def vehicle_insurance_policy_query_conditions(user=None):
 	return _get_query_for_table("Vehicle Insurance Policy", user)
 
+
+def toll_transaction_query_conditions(user=None):
+	return _get_query_for_table("Toll Transaction", user)
+
+
+def toll_allocation_rule_query_conditions(user=None):
+	return _get_query_for_table("Toll Allocation Rule", user)
+
+
+def toll_invoice_line_query_conditions(user=None):
+	return _get_query_for_table("Toll Invoice Line", user)
+
+
+def toll_provider_query_conditions(user=None):
+	"""Toll Provider is global config (no branch)."""
+	return ""
+
