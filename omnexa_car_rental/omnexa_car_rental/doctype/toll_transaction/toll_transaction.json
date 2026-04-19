@@ -69,7 +69,7 @@
   {"fieldname": "contract", "fieldtype": "Link", "label": "Rental Contract", "options": "Rental Contract"},
   {"fieldname": "customer_profile", "fieldtype": "Link", "label": "Customer Profile", "options": "Customer Profile"},
   {"fieldname": "customer", "fieldtype": "Link", "label": "Customer (Billing)", "options": "Customer"},
-  {"fieldname": "project", "fieldtype": "Link", "label": "Project", "options": "Project"},
+  {"fieldname": "project", "fieldtype": "Link", "label": "Project Contract", "options": "Project Contract"},
   {"fieldname": "payer_assigned", "fieldtype": "Select", "label": "Payer", "options": "\nCustomer\nCompany\nProject\nVendor\nInsurance"},
   {"fieldname": "billing_method_applied", "fieldtype": "Data", "label": "Billing Method Applied", "read_only": 1},
   {"fieldname": "allocation_rule", "fieldtype": "Link", "label": "Allocation Rule", "options": "Toll Allocation Rule", "read_only": 1},
