@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "naming_series",
   "section_provider",
   "transaction_id",
@@ -42,59 +43,314 @@
   "remarks",
   "section_org",
   "company",
-  "branch"
+  "branch",
+  "control_section",
+  "transaction_reference"
  ],
  "fields": [
-  {"default": "TOL-.YYYY.-", "fieldname": "naming_series", "fieldtype": "Select", "label": "Series", "options": "TOL-.YYYY.-", "reqd": 1},
-  {"fieldname": "section_provider", "fieldtype": "Section Break", "label": "Provider"},
-  {"fieldname": "transaction_id", "fieldtype": "Data", "in_list_view": 1, "label": "External Transaction ID", "reqd": 1},
-  {"fieldname": "provider", "fieldtype": "Link", "in_list_view": 1, "label": "Toll Provider", "options": "Toll Provider", "reqd": 1},
-  {"fieldname": "section_vehicle", "fieldtype": "Section Break", "label": "Vehicle"},
-  {"fieldname": "plate_number", "fieldtype": "Data", "in_list_view": 1, "label": "Plate Number (as reported)"},
-  {"fieldname": "tag_id", "fieldtype": "Data", "label": "Tag / RFID"},
-  {"fieldname": "vehicle", "fieldtype": "Link", "in_list_view": 1, "label": "Vehicle", "options": "Vehicle"},
-  {"fieldname": "section_crossing", "fieldtype": "Section Break", "label": "Crossing"},
-  {"fieldname": "crossing_datetime", "fieldtype": "Datetime", "in_list_view": 1, "label": "Crossing Date/Time", "reqd": 1},
-  {"fieldname": "entry_time", "fieldtype": "Datetime", "label": "Entry Time"},
-  {"fieldname": "exit_time", "fieldtype": "Datetime", "label": "Exit Time"},
-  {"fieldname": "toll_gate_name", "fieldtype": "Data", "label": "Gate / Location Name"},
-  {"fieldname": "toll_gate_code", "fieldtype": "Data", "label": "Gate Code"},
-  {"fieldname": "section_financial", "fieldtype": "Section Break", "label": "Financial"},
-  {"fieldname": "amount", "fieldtype": "Currency", "in_list_view": 1, "label": "Amount", "reqd": 1},
-  {"fieldname": "currency", "fieldtype": "Link", "label": "Currency", "options": "Currency", "reqd": 1},
-  {"fieldname": "exchange_rate", "fieldtype": "Float", "label": "Exchange Rate", "precision": 9},
-  {"fieldname": "amount_company_currency", "fieldtype": "Currency", "label": "Amount (Company Currency)", "read_only": 1},
-  {"fieldname": "country", "fieldtype": "Data", "label": "Country"},
-  {"fieldname": "section_match", "fieldtype": "Section Break", "label": "Matching & Allocation"},
-  {"fieldname": "contract", "fieldtype": "Link", "label": "Rental Contract", "options": "Rental Contract"},
-  {"fieldname": "customer_profile", "fieldtype": "Link", "label": "Customer Profile", "options": "Customer Profile"},
-  {"fieldname": "customer", "fieldtype": "Link", "label": "Customer (Billing)", "options": "Customer"},
-  {"fieldname": "project", "fieldtype": "Link", "label": "Project Contract", "options": "Project Contract"},
-  {"fieldname": "payer_assigned", "fieldtype": "Select", "label": "Payer", "options": "\nCustomer\nCompany\nProject\nVendor\nInsurance"},
-  {"fieldname": "billing_method_applied", "fieldtype": "Data", "label": "Billing Method Applied", "read_only": 1},
-  {"fieldname": "allocation_rule", "fieldtype": "Link", "label": "Allocation Rule", "options": "Toll Allocation Rule", "read_only": 1},
-  {"fieldname": "match_source", "fieldtype": "Data", "label": "Match Source", "read_only": 1},
-  {"fieldname": "section_status", "fieldtype": "Section Break", "label": "Workflow"},
-  {"fieldname": "status", "fieldtype": "Select", "in_list_view": 1, "in_standard_filter": 1, "label": "Status", "options": "Received\nVehicle Matched\nContract Matched\nRule Applied\nBilled\nPaid\nDisputed\nWritten Off\nClosed\nUnmatched\nDuplicate Ignored", "default": "Received", "reqd": 1},
-  {"fieldname": "section_audit", "fieldtype": "Section Break", "label": "Audit Trail"},
-  {"fieldname": "raw_payload", "fieldtype": "Long Text", "label": "Raw Payload (JSON)"},
-  {"fieldname": "duplicate_of", "fieldtype": "Link", "label": "Duplicate Of", "options": "Toll Transaction"},
-  {"fieldname": "remarks", "fieldtype": "Small Text", "label": "Remarks"},
-  {"fieldname": "section_org", "fieldtype": "Section Break", "label": "Organisation"},
-  {"fieldname": "company", "fieldtype": "Link", "label": "Company", "options": "Company", "reqd": 1},
-  {"fieldname": "branch", "fieldtype": "Link", "label": "Branch", "options": "Branch", "reqd": 1}
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Transaction Identity"
+  },
+  {
+   "default": "TOL-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "TOL-.YYYY.-",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_provider",
+   "fieldtype": "Section Break",
+   "label": "Provider"
+  },
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "External Transaction ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "provider",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Toll Provider",
+   "options": "Toll Provider",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_vehicle",
+   "fieldtype": "Section Break",
+   "label": "Vehicle"
+  },
+  {
+   "fieldname": "plate_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plate Number (as reported)"
+  },
+  {
+   "fieldname": "tag_id",
+   "fieldtype": "Data",
+   "label": "Tag / RFID"
+  },
+  {
+   "fieldname": "vehicle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Vehicle",
+   "options": "Vehicle"
+  },
+  {
+   "fieldname": "section_crossing",
+   "fieldtype": "Section Break",
+   "label": "Crossing"
+  },
+  {
+   "fieldname": "crossing_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Crossing Date/Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "entry_time",
+   "fieldtype": "Datetime",
+   "label": "Entry Time"
+  },
+  {
+   "fieldname": "exit_time",
+   "fieldtype": "Datetime",
+   "label": "Exit Time"
+  },
+  {
+   "fieldname": "toll_gate_name",
+   "fieldtype": "Data",
+   "label": "Gate / Location Name"
+  },
+  {
+   "fieldname": "toll_gate_code",
+   "fieldtype": "Data",
+   "label": "Gate Code"
+  },
+  {
+   "fieldname": "section_financial",
+   "fieldtype": "Section Break",
+   "label": "Financial"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "reqd": 1
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Float",
+   "label": "Exchange Rate",
+   "precision": 9
+  },
+  {
+   "fieldname": "amount_company_currency",
+   "fieldtype": "Currency",
+   "label": "Amount (Company Currency)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Data",
+   "label": "Country"
+  },
+  {
+   "fieldname": "section_match",
+   "fieldtype": "Section Break",
+   "label": "Matching & Allocation"
+  },
+  {
+   "fieldname": "contract",
+   "fieldtype": "Link",
+   "label": "Rental Contract",
+   "options": "Rental Contract"
+  },
+  {
+   "fieldname": "customer_profile",
+   "fieldtype": "Link",
+   "label": "Customer Profile",
+   "options": "Customer Profile"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer (Billing)",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project Contract",
+   "options": "Project Contract"
+  },
+  {
+   "fieldname": "payer_assigned",
+   "fieldtype": "Select",
+   "label": "Payer",
+   "options": "\nCustomer\nCompany\nProject\nVendor\nInsurance"
+  },
+  {
+   "fieldname": "billing_method_applied",
+   "fieldtype": "Data",
+   "label": "Billing Method Applied",
+   "read_only": 1
+  },
+  {
+   "fieldname": "allocation_rule",
+   "fieldtype": "Link",
+   "label": "Allocation Rule",
+   "options": "Toll Allocation Rule",
+   "read_only": 1
+  },
+  {
+   "fieldname": "match_source",
+   "fieldtype": "Data",
+   "label": "Match Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_status",
+   "fieldtype": "Section Break",
+   "label": "Workflow"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Received\nVehicle Matched\nContract Matched\nRule Applied\nBilled\nPaid\nDisputed\nWritten Off\nClosed\nUnmatched\nDuplicate Ignored",
+   "default": "Received",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_audit",
+   "fieldtype": "Section Break",
+   "label": "Audit Trail"
+  },
+  {
+   "fieldname": "raw_payload",
+   "fieldtype": "Long Text",
+   "label": "Raw Payload (JSON)"
+  },
+  {
+   "fieldname": "duplicate_of",
+   "fieldtype": "Link",
+   "label": "Duplicate Of",
+   "options": "Toll Transaction"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "section_org",
+   "fieldtype": "Section Break",
+   "label": "Organisation"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "branch",
+   "fieldtype": "Link",
+   "label": "Branch",
+   "options": "Branch",
+   "reqd": 1
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "transaction_reference",
+   "fieldtype": "Data",
+   "label": "Transaction Reference"
+  }
  ],
  "index_web_pages_for_search": 1,
  "links": [
-  {"group": "Billing", "link_doctype": "Toll Invoice Line", "link_fieldname": "toll_transaction"}
+  {
+   "group": "Billing",
+   "link_doctype": "Toll Invoice Line",
+   "link_fieldname": "toll_transaction"
+  }
  ],
  "module": "Omnexa Car Rental",
  "name": "Toll Transaction",
  "permissions": [
-  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "System Manager", "share": 1, "write": 1},
-  {"create": 1, "delete": 1, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Fleet Manager", "share": 1, "write": 1},
-  {"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Rental Agent", "share": 1, "write": 1},
-  {"create": 1, "delete": 0, "email": 1, "export": 1, "print": 1, "read": 1, "report": 1, "role": "Accountant", "share": 1, "write": 1}
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Fleet Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Rental Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accountant",
+   "share": 1,
+   "write": 1
+  }
  ],
  "sort_field": "crossing_datetime",
  "sort_order": "DESC",
