@@ -1,161 +1,161 @@
 {
- "actions": [],
- "allow_rename": 0,
- "autoname": "format:TIL-{#####}",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "identity_section",
-  "toll_transaction",
-  "sales_invoice",
-  "journal_entry",
-  "company",
-  "branch",
-  "amount",
-  "tax_amount",
-  "cost_center",
-  "revenue_account",
-  "description",
-  "control_section",
-  "line_reference"
- ],
- "fields": [
-  {
-   "fieldname": "identity_section",
-   "fieldtype": "Section Break",
-   "label": "Invoice Line Identity"
-  },
-  {
-   "fieldname": "toll_transaction",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Toll Transaction",
-   "options": "Toll Transaction",
-   "reqd": 1
-  },
-  {
-   "fieldname": "sales_invoice",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Sales Invoice",
-   "options": "Sales Invoice"
-  },
-  {
-   "fieldname": "journal_entry",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Journal Entry",
-   "options": "Journal Entry"
-  },
-  {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "Company",
-   "options": "Company",
-   "reqd": 1
-  },
-  {
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Amount",
-   "reqd": 1
-  },
-  {
-   "fieldname": "tax_amount",
-   "fieldtype": "Currency",
-   "label": "Tax Amount",
-   "default": 0
-  },
-  {
-   "fieldname": "cost_center",
-   "fieldtype": "Link",
-   "label": "Cost Center",
-   "options": "Cost Center"
-  },
-  {
-   "fieldname": "revenue_account",
-   "fieldtype": "Link",
-   "label": "Revenue Account",
-   "options": "GL Account"
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
-   "fieldname": "control_section",
-   "fieldtype": "Section Break",
-   "label": "Control"
-  },
-  {
-   "fieldname": "line_reference",
-   "fieldtype": "Data",
-   "label": "Line Reference"
-  }
- ],
- "index_web_pages_for_search": 1,
- "links": [],
- "module": "Omnexa Car Rental",
- "name": "Toll Invoice Line",
- "permissions": [
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Fleet Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 0,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Rental Agent",
-   "share": 0,
-   "write": 0
-  },
-  {
-   "create": 1,
-   "delete": 0,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Accountant",
-   "share": 1,
-   "write": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+	"actions": [],
+	"allow_rename": 0,
+	"autoname": "format:TIL-{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"identity_section",
+		"toll_transaction",
+		"sales_invoice",
+		"journal_entry",
+		"company",
+		"branch",
+		"amount",
+		"tax_amount",
+		"cost_center",
+		"revenue_account",
+		"description",
+		"control_section",
+		"line_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "identity_section",
+			"fieldtype": "Section Break",
+			"label": "Transaction Core"
+		},
+		{
+			"fieldname": "toll_transaction",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Toll Transaction",
+			"options": "Toll Transaction",
+			"reqd": 1
+		},
+		{
+			"fieldname": "sales_invoice",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Sales Invoice",
+			"options": "Sales Invoice"
+		},
+		{
+			"fieldname": "journal_entry",
+			"fieldtype": "Link",
+			"in_list_view": 1,
+			"label": "Journal Entry",
+			"options": "Journal Entry"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch"
+		},
+		{
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"in_list_view": 1,
+			"label": "Amount",
+			"reqd": 1
+		},
+		{
+			"fieldname": "tax_amount",
+			"fieldtype": "Currency",
+			"label": "Tax Amount",
+			"default": 0
+		},
+		{
+			"fieldname": "cost_center",
+			"fieldtype": "Link",
+			"label": "Cost Center",
+			"options": "Cost Center"
+		},
+		{
+			"fieldname": "revenue_account",
+			"fieldtype": "Link",
+			"label": "Revenue Account",
+			"options": "GL Account"
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		},
+		{
+			"fieldname": "control_section",
+			"fieldtype": "Section Break",
+			"label": "Control"
+		},
+		{
+			"fieldname": "line_reference",
+			"fieldtype": "Data",
+			"label": "Line Reference"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Car Rental",
+	"name": "Toll Invoice Line",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Fleet Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 0,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Rental Agent",
+			"share": 0,
+			"write": 0
+		},
+		{
+			"create": 1,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Accountant",
+			"share": 1,
+			"write": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
 }

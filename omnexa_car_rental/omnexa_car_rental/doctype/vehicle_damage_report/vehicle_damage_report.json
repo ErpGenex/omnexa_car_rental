@@ -1,160 +1,160 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "format:DMG-{YYYY}-{#####}",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "identity_section",
-  "vehicle",
-  "contract",
-  "company",
-  "branch",
-  "report_date",
-  "liability_type",
-  "estimated_damage_cost",
-  "insurance_claim_required",
-  "status",
-  "description",
-  "control_section",
-  "report_reference"
- ],
- "fields": [
-  {
-   "fieldname": "identity_section",
-   "fieldtype": "Section Break",
-   "label": "Damage Report Identity"
-  },
-  {
-   "fieldname": "vehicle",
-   "fieldtype": "Link",
-   "label": "Vehicle",
-   "options": "Vehicle",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "contract",
-   "fieldtype": "Link",
-   "label": "Rental Contract",
-   "options": "Rental Contract"
-  },
-  {
-   "fieldname": "company",
-   "fieldtype": "Link",
-   "label": "Company",
-   "options": "Company",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "branch",
-   "fieldtype": "Link",
-   "label": "Branch",
-   "options": "Branch",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "report_date",
-   "fieldtype": "Date",
-   "label": "Report Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "liability_type",
-   "fieldtype": "Select",
-   "label": "Liability",
-   "options": "Customer liability\nCompany liability\nInsurance claim",
-   "default": "Customer liability"
-  },
-  {
-   "fieldname": "estimated_damage_cost",
-   "fieldtype": "Currency",
-   "label": "Estimated Damage Cost",
-   "default": "0"
-  },
-  {
-   "fieldname": "insurance_claim_required",
-   "fieldtype": "Check",
-   "label": "Insurance Claim Required",
-   "default": "0"
-  },
-  {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Open\nUnder Review\nResolved\nClosed",
-   "default": "Open",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
-   "fieldname": "control_section",
-   "fieldtype": "Section Break",
-   "label": "Control"
-  },
-  {
-   "fieldname": "report_reference",
-   "fieldtype": "Data",
-   "label": "Report Reference"
-  }
- ],
- "module": "Omnexa Car Rental",
- "name": "Vehicle Damage Report",
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  },
-  {
-   "role": "Fleet Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  },
-  {
-   "role": "Rental Agent",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 0,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  },
-  {
-   "role": "Accountant",
-   "read": 1,
-   "write": 0,
-   "create": 0,
-   "delete": 0,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 0
-  }
- ],
- "track_changes": 1
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "format:DMG-{YYYY}-{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"identity_section",
+		"vehicle",
+		"contract",
+		"company",
+		"branch",
+		"report_date",
+		"liability_type",
+		"estimated_damage_cost",
+		"insurance_claim_required",
+		"status",
+		"description",
+		"control_section",
+		"report_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "identity_section",
+			"fieldtype": "Section Break",
+			"label": "Transaction Core"
+		},
+		{
+			"fieldname": "vehicle",
+			"fieldtype": "Link",
+			"label": "Vehicle",
+			"options": "Vehicle",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "contract",
+			"fieldtype": "Link",
+			"label": "Rental Contract",
+			"options": "Rental Contract"
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "report_date",
+			"fieldtype": "Date",
+			"label": "Report Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "liability_type",
+			"fieldtype": "Select",
+			"label": "Liability",
+			"options": "Customer liability\nCompany liability\nInsurance claim",
+			"default": "Customer liability"
+		},
+		{
+			"fieldname": "estimated_damage_cost",
+			"fieldtype": "Currency",
+			"label": "Estimated Damage Cost",
+			"default": "0"
+		},
+		{
+			"fieldname": "insurance_claim_required",
+			"fieldtype": "Check",
+			"label": "Insurance Claim Required",
+			"default": "0"
+		},
+		{
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Open\nUnder Review\nResolved\nClosed",
+			"default": "Open",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "description",
+			"fieldtype": "Small Text",
+			"label": "Description"
+		},
+		{
+			"fieldname": "control_section",
+			"fieldtype": "Section Break",
+			"label": "Control"
+		},
+		{
+			"fieldname": "report_reference",
+			"fieldtype": "Data",
+			"label": "Report Reference"
+		}
+	],
+	"module": "Omnexa Car Rental",
+	"name": "Vehicle Damage Report",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Accountant",
+			"read": 1,
+			"write": 0,
+			"create": 0,
+			"delete": 0,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 0
+		}
+	],
+	"track_changes": 1
 }
