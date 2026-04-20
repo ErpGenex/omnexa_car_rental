@@ -1,0 +1,41 @@
+{
+ "allow_roles": [
+  {
+   "role": "Desk User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-04-20 00:31:39.637108",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://frappe.io/framework",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-04-20 02:24:44.150409",
+ "modified_by": "Administrator",
+ "module": "Omnexa Car Rental",
+ "name": "ERPGENEX \u2014 Car Rental",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "ERPGENEX-WS-car_rental-01-customer_profile"
+  },
+  {
+   "step": "ERPGENEX-WS-car_rental-02-customer"
+  },
+  {
+   "step": "ERPGENEX-WS-car_rental-03-vehicle"
+  },
+  {
+   "step": "ERPGENEX-WS-car_rental-04-rental_driver"
+  },
+  {
+   "step": "ERPGENEX-WS-car_rental-home"
+  }
+ ],
+ "subtitle": "Guided setup for this workspace.",
+ "success_message": "You are ready to work in Car Rental.",
+ "title": "ERPGENEX \u00b7 Car Rental"
+}
