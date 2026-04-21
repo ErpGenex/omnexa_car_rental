@@ -5,28 +5,23 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"company",
 		"branch",
 		"customer_profile",
 		"vehicle",
+		"column_break_omnexa_1",
 		"rental_type",
 		"rental_mode",
 		"start_datetime",
 		"end_datetime",
+		"column_break_omnexa_2",
 		"booking_status",
 		"rental_contract",
 		"currency",
 		"estimated_amount",
-		"control_section",
 		"booking_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "customer_profile",
 			"fieldtype": "Link",
@@ -114,14 +109,17 @@
 			"default": "0"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "booking_reference",
 			"fieldtype": "Data",
 			"label": "Booking Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

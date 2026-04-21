@@ -5,7 +5,6 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"driver_name",
 		"company",
 		"branch",
@@ -13,15 +12,9 @@
 		"license_expiry_date",
 		"status",
 		"performance_score",
-		"control_section",
 		"license_country"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "driver_name",
 			"fieldtype": "Data",
@@ -71,11 +64,6 @@
 			"fieldtype": "Percent",
 			"label": "Performance Score",
 			"default": "0"
-		},
-		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Compliance"
 		},
 		{
 			"fieldname": "license_country",

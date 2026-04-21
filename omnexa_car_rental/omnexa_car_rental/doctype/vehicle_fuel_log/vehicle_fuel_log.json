@@ -5,25 +5,20 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"vehicle",
 		"contract",
 		"company",
+		"column_break_omnexa_1",
 		"branch",
 		"posting_date",
 		"fuel_liters",
+		"column_break_omnexa_2",
 		"fuel_cost",
 		"allocation_mode",
 		"km_driven",
-		"control_section",
 		"fuel_card_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",
@@ -86,14 +81,17 @@
 			"default": "0"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "fuel_card_reference",
 			"fieldtype": "Data",
 			"label": "Fuel Card Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

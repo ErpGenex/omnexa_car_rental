@@ -5,7 +5,6 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"rule_name",
 		"priority",
 		"is_active",
@@ -21,20 +20,16 @@
 		"payer",
 		"billing_method",
 		"toll_expense_account",
+		"column_break_omnexa_1",
 		"company_clearing_account",
 		"revenue_account",
 		"cost_center",
+		"column_break_omnexa_2",
 		"invoice_item",
 		"description",
-		"control_section",
 		"rule_owner"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "rule_name",
 			"fieldtype": "Data",
@@ -164,15 +159,18 @@
 			"label": "Description"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Governance"
-		},
-		{
 			"fieldname": "rule_owner",
 			"fieldtype": "Link",
 			"label": "Rule Owner",
 			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"index_web_pages_for_search": 1,

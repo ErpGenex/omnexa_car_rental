@@ -5,26 +5,21 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"vehicle",
 		"contract",
 		"company",
+		"column_break_omnexa_1",
 		"branch",
 		"report_date",
 		"liability_type",
 		"estimated_damage_cost",
+		"column_break_omnexa_2",
 		"insurance_claim_required",
 		"status",
 		"description",
-		"control_section",
 		"report_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",
@@ -94,14 +89,17 @@
 			"label": "Description"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "report_reference",
 			"fieldtype": "Data",
 			"label": "Report Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

@@ -5,7 +5,6 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"naming_series",
 		"section_provider",
 		"transaction_id",
@@ -17,12 +16,14 @@
 		"section_crossing",
 		"crossing_datetime",
 		"entry_time",
+		"column_break_omnexa_2",
 		"exit_time",
 		"toll_gate_name",
 		"toll_gate_code",
 		"section_financial",
 		"amount",
 		"currency",
+		"column_break_omnexa_3",
 		"exchange_rate",
 		"amount_company_currency",
 		"country",
@@ -31,6 +32,7 @@
 		"customer_profile",
 		"customer",
 		"project",
+		"column_break_omnexa_1",
 		"payer_assigned",
 		"billing_method_applied",
 		"allocation_rule",
@@ -44,15 +46,9 @@
 		"section_org",
 		"company",
 		"branch",
-		"control_section",
 		"transaction_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"default": "TOL-.YYYY.-",
 			"fieldname": "naming_series",
@@ -282,14 +278,21 @@
 			"reqd": 1
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "transaction_reference",
 			"fieldtype": "Data",
 			"label": "Transaction Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_3",
+			"fieldtype": "Column Break"
 		}
 	],
 	"index_web_pages_for_search": 1,

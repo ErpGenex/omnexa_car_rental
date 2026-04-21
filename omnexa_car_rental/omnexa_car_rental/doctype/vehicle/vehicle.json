@@ -5,26 +5,21 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"plate_number",
 		"toll_tag_id",
 		"vin",
+		"column_break_omnexa_1",
 		"model",
 		"year",
 		"category",
 		"source_type",
+		"column_break_omnexa_2",
 		"company",
 		"branch",
 		"status",
-		"control_section",
 		"asset_owner"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "plate_number",
 			"fieldtype": "Data",
@@ -97,15 +92,18 @@
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "asset_owner",
 			"fieldtype": "Link",
 			"label": "Asset Owner",
 			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"index_web_pages_for_search": 1,

@@ -5,25 +5,20 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"vehicle",
 		"company",
 		"branch",
+		"column_break_omnexa_1",
 		"maintenance_type",
 		"posting_date",
 		"odometer_km",
+		"column_break_omnexa_2",
 		"cost_amount",
 		"status",
 		"notes",
-		"control_section",
 		"service_provider"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",
@@ -87,14 +82,17 @@
 			"label": "Notes"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "service_provider",
 			"fieldtype": "Data",
 			"label": "Service Provider"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

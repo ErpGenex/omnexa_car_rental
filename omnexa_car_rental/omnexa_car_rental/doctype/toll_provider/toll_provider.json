@@ -5,7 +5,6 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"provider_code",
 		"provider_name",
 		"integration_type",
@@ -21,18 +20,13 @@
 		"section_defaults",
 		"default_currency",
 		"default_country",
+		"column_break_omnexa_1",
 		"deduplication_window_seconds",
 		"default_sales_item",
 		"section_notes",
-		"notes",
-		"control_section"
+		"notes"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "provider_code",
 			"fieldtype": "Data",
@@ -143,9 +137,8 @@
 			"label": "Notes"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Compliance"
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
 		}
 	],
 	"index_web_pages_for_search": 1,

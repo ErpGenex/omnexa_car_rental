@@ -5,26 +5,21 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"vehicle",
 		"company",
 		"branch",
+		"column_break_omnexa_1",
 		"policy_number",
 		"provider",
 		"coverage_type",
 		"start_date",
+		"column_break_omnexa_2",
 		"end_date",
 		"premium_amount",
 		"status",
-		"control_section",
 		"insurer_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",
@@ -96,14 +91,17 @@
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Compliance"
-		},
-		{
 			"fieldname": "insurer_reference",
 			"fieldtype": "Data",
 			"label": "Insurer Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

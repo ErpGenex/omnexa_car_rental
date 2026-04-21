@@ -5,27 +5,22 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"supplier",
 		"company",
 		"branch",
 		"vehicle_source_type",
+		"column_break_omnexa_1",
 		"fleet_model",
 		"fixed_rent_amount",
 		"revenue_share_percent",
 		"settlement_cycle",
+		"column_break_omnexa_2",
 		"start_date",
 		"end_date",
 		"status",
-		"control_section",
 		"supplier_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "supplier",
 			"fieldtype": "Link",
@@ -105,14 +100,17 @@
 			"in_list_view": 1
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "supplier_reference",
 			"fieldtype": "Data",
 			"label": "Supplier Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"module": "Omnexa Car Rental",

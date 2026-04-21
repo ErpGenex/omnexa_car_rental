@@ -5,31 +5,26 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"booking",
 		"customer_profile",
 		"vehicle",
 		"company",
 		"branch",
+		"column_break_omnexa_1",
 		"rental_mode",
 		"contract_start",
 		"contract_end",
 		"grace_period_minutes",
 		"extension_rule",
+		"column_break_omnexa_2",
 		"early_return_policy",
 		"deposit_amount",
 		"insurance_coverage",
 		"status",
 		"total_amount",
-		"control_section",
 		"contract_manager"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "booking",
 			"fieldtype": "Link",
@@ -133,15 +128,18 @@
 			"default": "0"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "contract_manager",
 			"fieldtype": "Link",
 			"label": "Contract Manager",
 			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"is_submittable": 1,

@@ -5,26 +5,21 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
-		"identity_section",
 		"toll_transaction",
 		"sales_invoice",
 		"journal_entry",
+		"column_break_omnexa_1",
 		"company",
 		"branch",
 		"amount",
 		"tax_amount",
+		"column_break_omnexa_2",
 		"cost_center",
 		"revenue_account",
 		"description",
-		"control_section",
 		"line_reference"
 	],
 	"fields": [
-		{
-			"fieldname": "identity_section",
-			"fieldtype": "Section Break",
-			"label": "Transaction Core"
-		},
 		{
 			"fieldname": "toll_transaction",
 			"fieldtype": "Link",
@@ -91,14 +86,17 @@
 			"label": "Description"
 		},
 		{
-			"fieldname": "control_section",
-			"fieldtype": "Section Break",
-			"label": "Control"
-		},
-		{
 			"fieldname": "line_reference",
 			"fieldtype": "Data",
 			"label": "Line Reference"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
 		}
 	],
 	"index_web_pages_for_search": 1,
