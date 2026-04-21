@@ -81,7 +81,8 @@ add_to_apps_screen = [
 # Installation
 # ------------
 
-# before_install = "omnexa_car_rental.install.before_install"
+before_install = "omnexa_car_rental.install.enforce_supported_frappe_version"
+before_migrate = "omnexa_car_rental.install.enforce_supported_frappe_version"
 after_install = "omnexa_car_rental.install.after_install"
 after_migrate = "omnexa_car_rental.install.after_migrate"
 

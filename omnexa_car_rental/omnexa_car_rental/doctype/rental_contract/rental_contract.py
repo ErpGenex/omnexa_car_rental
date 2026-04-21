@@ -4,7 +4,7 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
-from frappe.utils import get_datetime
+from frappe.utils import flt, get_datetime
 
 from omnexa_car_rental.omnexa_car_rental.rental_availability import (
 	overlapping_confirmed_bookings,
@@ -21,6 +21,7 @@ class RentalContract(Document):
 		self._sync_from_booking()
 		self._validate_vehicle_org_match()
 		self._validate_no_double_booking()
+		self._validate_contract_controls()
 
 	def before_submit(self):
 		if self.status == "Draft":
@@ -103,3 +104,11 @@ class RentalContract(Document):
 				_("Vehicle has overlapping confirmed booking(s): {0}").format(", ".join(book_ov[:3])),
 				title=_("Availability"),
 			)
+
+	def _validate_contract_controls(self):
+		if not self.customer_profile:
+			frappe.throw(_("Customer Profile is mandatory."), title=_("Contract"))
+		if not self.vehicle:
+			frappe.throw(_("Vehicle is mandatory."), title=_("Contract"))
+		if flt(self.total_amount) <= 0:
+			frappe.throw(_("Total Amount must be greater than zero."), title=_("Contract"))
