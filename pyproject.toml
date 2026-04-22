@@ -1,7 +1,7 @@
 [project]
 name = "omnexa_car_rental"
 authors = [
-    { name = "Omnexa", email = "dev@omnexa.com"}
+    { name = "ErpGenEx", email = "dev@omnexa.com"}
 ]
 description = "Global Car Rental and Fleet Management"
 requires-python = ">=3.10"
