@@ -2,7 +2,7 @@ app_name = "omnexa_car_rental"
 app_title = "ErpGenEx Car Rental"
 app_publisher = "ErpGenEx"
 app_description = "Global Car Rental and Fleet Management"
-app_email = "dev@omnexa.com"
+app_email = "dev@erpgenex.com"
 app_license = "mit"
 
 # Apps
