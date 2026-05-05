@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"toll_transaction",
 		"sales_invoice",
 		"journal_entry",
 		"column_break_omnexa_1",
 		"company",
 		"branch",
+		"tab_break_details",
 		"amount",
 		"tax_amount",
 		"column_break_omnexa_2",
@@ -20,6 +22,16 @@
 		"line_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "toll_transaction",
 			"fieldtype": "Link",

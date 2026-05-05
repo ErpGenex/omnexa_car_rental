@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"vehicle",
 		"company",
 		"branch",
 		"column_break_omnexa_1",
 		"policy_number",
 		"provider",
+		"tab_break_details",
 		"coverage_type",
 		"start_date",
 		"column_break_omnexa_2",
@@ -20,6 +22,16 @@
 		"insurer_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",

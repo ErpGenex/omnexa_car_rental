@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"provider_code",
 		"provider_name",
 		"integration_type",
@@ -13,20 +14,43 @@
 		"endpoint_url",
 		"poll_interval_minutes",
 		"last_poll_at",
+		"tab_break_1",
 		"section_auth",
 		"webhook_secret",
 		"auth_header_name",
 		"auth_token",
+		"tab_break_2",
 		"section_defaults",
 		"default_currency",
 		"default_country",
 		"column_break_omnexa_1",
 		"deduplication_window_seconds",
 		"default_sales_item",
+		"tab_break_3",
 		"section_notes",
 		"notes"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_1",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
+		{
+			"fieldname": "tab_break_2",
+			"fieldtype": "Tab Break",
+			"label": "Further"
+		},
+		{
+			"fieldname": "tab_break_3",
+			"fieldtype": "Tab Break",
+			"label": "Posting"
+		},
 		{
 			"fieldname": "provider_code",
 			"fieldtype": "Data",
