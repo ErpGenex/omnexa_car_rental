@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"booking",
 		"customer_profile",
 		"vehicle",
@@ -14,6 +15,7 @@
 		"rental_mode",
 		"contract_start",
 		"contract_end",
+		"tab_break_details",
 		"grace_period_minutes",
 		"extension_rule",
 		"column_break_omnexa_2",
@@ -25,6 +27,16 @@
 		"contract_manager"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "booking",
 			"fieldtype": "Link",

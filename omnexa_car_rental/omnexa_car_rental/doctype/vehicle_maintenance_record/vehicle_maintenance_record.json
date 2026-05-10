@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"vehicle",
 		"company",
 		"branch",
 		"column_break_omnexa_1",
 		"maintenance_type",
 		"posting_date",
+		"tab_break_details",
 		"odometer_km",
 		"column_break_omnexa_2",
 		"cost_amount",
@@ -19,6 +21,16 @@
 		"service_provider"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",

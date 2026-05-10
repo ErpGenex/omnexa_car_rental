@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"company",
 		"branch",
 		"customer_profile",
@@ -12,6 +13,7 @@
 		"column_break_omnexa_1",
 		"rental_type",
 		"rental_mode",
+		"tab_break_details",
 		"start_datetime",
 		"end_datetime",
 		"column_break_omnexa_2",
@@ -22,6 +24,16 @@
 		"booking_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "customer_profile",
 			"fieldtype": "Link",
