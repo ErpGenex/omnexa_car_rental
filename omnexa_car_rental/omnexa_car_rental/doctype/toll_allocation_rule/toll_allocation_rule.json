@@ -5,6 +5,7 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"rule_name",
 		"priority",
 		"is_active",
@@ -16,6 +17,7 @@
 		"match_vehicle_category",
 		"match_customer_group",
 		"match_project",
+		"tab_break_1",
 		"section_allocation",
 		"payer",
 		"billing_method",
@@ -30,6 +32,16 @@
 		"rule_owner"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_1",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "rule_name",
 			"fieldtype": "Data",

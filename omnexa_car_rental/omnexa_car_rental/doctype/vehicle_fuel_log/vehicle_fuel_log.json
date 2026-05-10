@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"vehicle",
 		"contract",
 		"company",
 		"column_break_omnexa_1",
 		"branch",
 		"posting_date",
+		"tab_break_details",
 		"fuel_liters",
 		"column_break_omnexa_2",
 		"fuel_cost",
@@ -19,6 +21,16 @@
 		"fuel_card_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",

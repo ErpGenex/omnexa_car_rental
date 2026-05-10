@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"plate_number",
 		"toll_tag_id",
 		"vin",
 		"column_break_omnexa_1",
 		"model",
 		"year",
+		"tab_break_details",
 		"category",
 		"source_type",
 		"column_break_omnexa_2",
@@ -20,6 +22,16 @@
 		"asset_owner"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "plate_number",
 			"fieldtype": "Data",

@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"vehicle",
 		"contract",
 		"company",
 		"column_break_omnexa_1",
 		"branch",
 		"report_date",
+		"tab_break_details",
 		"liability_type",
 		"estimated_damage_cost",
 		"column_break_omnexa_2",
@@ -20,6 +22,16 @@
 		"report_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "vehicle",
 			"fieldtype": "Link",

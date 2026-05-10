@@ -5,14 +5,18 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"naming_series",
+		"tab_break_1",
 		"section_provider",
 		"transaction_id",
 		"provider",
+		"tab_break_2",
 		"section_vehicle",
 		"plate_number",
 		"tag_id",
 		"vehicle",
+		"tab_break_3",
 		"section_crossing",
 		"crossing_datetime",
 		"entry_time",
@@ -20,6 +24,7 @@
 		"exit_time",
 		"toll_gate_name",
 		"toll_gate_code",
+		"tab_break_4",
 		"section_financial",
 		"amount",
 		"currency",
@@ -27,6 +32,7 @@
 		"exchange_rate",
 		"amount_company_currency",
 		"country",
+		"tab_break_5",
 		"section_match",
 		"contract",
 		"customer_profile",
@@ -37,18 +43,66 @@
 		"billing_method_applied",
 		"allocation_rule",
 		"match_source",
+		"tab_break_6",
 		"section_status",
 		"status",
+		"tab_break_7",
 		"section_audit",
 		"raw_payload",
 		"duplicate_of",
 		"remarks",
+		"tab_break_8",
 		"section_org",
 		"company",
 		"branch",
 		"transaction_reference"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_1",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
+		{
+			"fieldname": "tab_break_2",
+			"fieldtype": "Tab Break",
+			"label": "Further"
+		},
+		{
+			"fieldname": "tab_break_3",
+			"fieldtype": "Tab Break",
+			"label": "Posting"
+		},
+		{
+			"fieldname": "tab_break_4",
+			"fieldtype": "Tab Break",
+			"label": "More"
+		},
+		{
+			"fieldname": "tab_break_5",
+			"fieldtype": "Tab Break",
+			"label": "References"
+		},
+		{
+			"fieldname": "tab_break_6",
+			"fieldtype": "Tab Break",
+			"label": "Additional"
+		},
+		{
+			"fieldname": "tab_break_7",
+			"fieldtype": "Tab Break",
+			"label": "Tab 8"
+		},
+		{
+			"fieldname": "tab_break_8",
+			"fieldtype": "Tab Break",
+			"label": "Tab 9"
+		},
 		{
 			"default": "TOL-.YYYY.-",
 			"fieldname": "naming_series",
