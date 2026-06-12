@@ -7,3 +7,4 @@
 omnexa_car_rental.patches.v1_0.sync_car_rental_report_roles
 omnexa_car_rental.patches.v1_0.sync_car_rental_workspace_full
 omnexa_car_rental.patches.v1_0.seed_global_rental_wave234
+omnexa_car_rental.patches.v1_0.seed_salik_darb_providers

@@ -6,16 +6,39 @@
 import frappe
 from frappe import _
 
+from omnexa_car_rental.omnexa_car_rental.toll.toll_util import verify_webhook_signature
+
+
+def _extract_signature() -> str | None:
+	for header in (
+		"X-Omnexa-Signature",
+		"X-Signature",
+		"X-Salik-Signature",
+		"X-DARB-Signature",
+		"X-Hub-Signature-256",
+	):
+		val = frappe.get_request_header(header)
+		if val:
+			return val
+	return None
+
 
 @frappe.whitelist(allow_guest=True, methods=["POST"])
 def ingest():
+	"""POST JSON body with ?provider_code=SALIK or ?provider_code=DARB"""
 	provider_code = frappe.form_dict.get("provider_code") or frappe.request.args.get("provider_code")
 	if not provider_code:
-		frappe.throw(_("provider_code is required"), exc=frappe.ValidationError)
+		frappe.throw(_("provider_code is required (SALIK or DARB)"), exc=frappe.ValidationError)
 
 	raw = frappe.request.get_data(as_text=True)
-	sig = frappe.get_request_header("X-Omnexa-Signature") or frappe.get_request_header("X-Signature")
+	sig = _extract_signature()
 
 	from omnexa_car_rental.omnexa_car_rental.toll.toll_ingestion import ingest_payload
 
 	return ingest_payload(provider_code, raw, signature_header=sig, auto_match=True, auto_bill=False)
+
+
+@frappe.whitelist(allow_guest=True, methods=["GET"])
+def health():
+	"""Lightweight health check for Salik/DARB webhook endpoints."""
+	return {"ok": True, "service": "omnexa-toll-webhook", "providers": ["SALIK", "DARB"]}

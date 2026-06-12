@@ -6,14 +6,10 @@ from frappe.utils import now
 
 
 def poll_toll_providers():
-	"""Scheduler hook: mark poll time; implement provider-specific fetch via custom app hooks."""
-	for name in frappe.get_all(
-		"Toll Provider",
-		filters={"integration_type": "API Polling", "is_active": 1},
-		pluck="name",
-	):
-		frappe.db.set_value("Toll Provider", name, "last_poll_at", now(), update_modified=False)
-	frappe.db.commit()
+	"""Scheduler: poll RTA Salik and ITC DARB for new toll passages."""
+	from omnexa_car_rental.omnexa_car_rental.toll.toll_polling import poll_all_active
+
+	poll_all_active(force=False)
 
 
 def process_unmatched_toll_queue(limit: int = 50):

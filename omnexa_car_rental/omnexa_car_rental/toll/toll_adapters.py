@@ -7,7 +7,7 @@ Canonical keys expected by toll_ingestion._map_payload_to_row:
 transaction_id, crossing_datetime, amount, currency,
 plate_number, tag_id, toll_gate_name, toll_gate_code, country, entry_time, exit_time
 
-Official Salik/DARB APIs differ; extend these mappers when credentials and specs are available.
+Official Salik/DARB APIs differ; mappers cover RTA Salik + ITC DARB fleet feed field names.
 """
 
 from __future__ import annotations
