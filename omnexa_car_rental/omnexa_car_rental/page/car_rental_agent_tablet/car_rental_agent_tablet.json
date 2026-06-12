@@ -1,0 +1,19 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-agent-tablet",
+	"page_name": "car-rental-agent-tablet",
+	"standard": "Yes",
+	"title": "Agent Tablet Check-In/Out",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Fleet Manager"
+		},
+		{
+			"role": "Rental Agent"
+		}
+	]
+}

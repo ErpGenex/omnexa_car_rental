@@ -1,0 +1,87 @@
+{
+	"actions": [],
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"module": "Omnexa Car Rental",
+	"name": "Rental Country Pack",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1,
+	"autoname": "field:country_code",
+	"fields": [
+		{
+			"fieldname": "country_code",
+			"fieldtype": "Data",
+			"label": "Country Code",
+			"reqd": 1,
+			"unique": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "country_name",
+			"fieldtype": "Data",
+			"label": "Country Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "default_currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency"
+		},
+		{
+			"fieldname": "tax_template",
+			"fieldtype": "Data",
+			"label": "Tax Template"
+		},
+		{
+			"fieldname": "regulatory_notes",
+			"fieldtype": "Text",
+			"label": "Regulatory Notes"
+		},
+		{
+			"default": "1",
+			"fieldname": "is_active",
+			"fieldtype": "Check",
+			"label": "Active"
+		}
+	]
+}

@@ -62,6 +62,22 @@ def overlapping_confirmed_bookings(
 	return out
 
 
+def vehicle_has_overlap(
+	vehicle: str,
+	start_dt,
+	end_dt,
+	*,
+	exclude_booking: str | None = None,
+	exclude_contract: str | None = None,
+) -> bool:
+	"""True if vehicle has confirmed booking or active contract overlap."""
+	if overlapping_confirmed_bookings(vehicle, start_dt, end_dt, exclude_booking=exclude_booking):
+		return True
+	if overlapping_submitted_contracts(vehicle, start_dt, end_dt, exclude_contract=exclude_contract):
+		return True
+	return False
+
+
 def vehicle_has_other_active_rental(vehicle: str, exclude_contract: str | None = None) -> bool:
 	"""Another submitted contract still in Active Rental for this vehicle."""
 	filters: dict = {"vehicle": vehicle, "docstatus": 1, "status": "Active Rental"}

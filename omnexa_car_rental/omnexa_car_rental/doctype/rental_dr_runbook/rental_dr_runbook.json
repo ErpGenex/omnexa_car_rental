@@ -1,0 +1,81 @@
+{
+	"actions": [],
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"module": "Omnexa Car Rental",
+	"name": "Rental DR Runbook",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1,
+	"autoname": "field:runbook_name",
+	"fields": [
+		{
+			"fieldname": "runbook_name",
+			"fieldtype": "Data",
+			"label": "Runbook Name",
+			"reqd": 1,
+			"unique": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "rto_hours",
+			"fieldtype": "Int",
+			"label": "RTO (hours)",
+			"default": "4"
+		},
+		{
+			"fieldname": "rpo_hours",
+			"fieldtype": "Int",
+			"label": "RPO (hours)",
+			"default": "1"
+		},
+		{
+			"fieldname": "runbook_steps",
+			"fieldtype": "Text Editor",
+			"label": "Steps"
+		},
+		{
+			"fieldname": "last_tested_on",
+			"fieldtype": "Date",
+			"label": "Last Tested"
+		}
+	]
+}

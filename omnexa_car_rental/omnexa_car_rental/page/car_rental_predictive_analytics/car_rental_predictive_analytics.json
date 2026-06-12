@@ -1,0 +1,19 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-predictive-analytics",
+	"page_name": "car-rental-predictive-analytics",
+	"standard": "Yes",
+	"title": "Predictive Analytics Board",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Fleet Manager"
+		},
+		{
+			"role": "Rental Agent"
+		}
+	]
+}

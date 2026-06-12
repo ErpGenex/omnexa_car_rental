@@ -1,0 +1,13 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-executive-dashboard",
+	"page_name": "car-rental-executive-dashboard",
+	"standard": "Yes",
+	"title": "Car Rental Executive Dashboard",
+	"roles": [
+		{"role": "System Manager"},
+		{"role": "Fleet Manager"},
+		{"role": "Rental Agent"}
+	]
+}

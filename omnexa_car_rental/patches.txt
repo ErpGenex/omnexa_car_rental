@@ -5,3 +5,5 @@
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
 omnexa_car_rental.patches.v1_0.sync_car_rental_report_roles
+omnexa_car_rental.patches.v1_0.sync_car_rental_workspace_full
+omnexa_car_rental.patches.v1_0.seed_global_rental_wave234

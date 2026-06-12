@@ -1,0 +1,19 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-walk-in-kiosk",
+	"page_name": "car-rental-walk-in-kiosk",
+	"standard": "Yes",
+	"title": "Walk-In Kiosk",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Fleet Manager"
+		},
+		{
+			"role": "Rental Agent"
+		}
+	]
+}

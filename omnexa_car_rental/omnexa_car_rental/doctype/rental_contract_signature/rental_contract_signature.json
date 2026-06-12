@@ -1,0 +1,105 @@
+{
+	"actions": [],
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"module": "Omnexa Car Rental",
+	"name": "Rental Contract Signature",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1,
+	"autoname": "format:SIG-{YYYY}-{#####}",
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "rental_contract",
+			"fieldtype": "Link",
+			"label": "Rental Contract",
+			"options": "Rental Contract",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "signed_by",
+			"fieldtype": "Data",
+			"label": "Signed By",
+			"reqd": 1
+		},
+		{
+			"fieldname": "signed_on",
+			"fieldtype": "Datetime",
+			"label": "Signed On",
+			"reqd": 1
+		},
+		{
+			"fieldname": "signature_provider",
+			"fieldtype": "Data",
+			"label": "Provider",
+			"default": "Omnexa E-Sign"
+		},
+		{
+			"fieldname": "signature_token",
+			"fieldtype": "Data",
+			"label": "Signature Token"
+		},
+		{
+			"default": "Signed",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Pending\nSigned\nRevoked",
+			"in_list_view": 1
+		}
+	]
+}

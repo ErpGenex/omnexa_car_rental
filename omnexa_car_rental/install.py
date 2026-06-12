@@ -47,3 +47,9 @@ def after_install():
 
 def after_migrate():
 	ensure_fleet_roles()
+	try:
+		from omnexa_car_rental.workspace.car_rental_workspace import sync_car_rental_workspace_menu
+
+		sync_car_rental_workspace_menu(save=True, rebuild=True)
+	except Exception:
+		frappe.log_error(frappe.get_traceback(), "Omnexa Car Rental: workspace sync failed")

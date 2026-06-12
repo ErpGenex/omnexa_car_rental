@@ -162,10 +162,10 @@ def create_rental_contract_from_booking(booking: str):
 	c.insert()
 	return c.name
 
+
 @frappe.whitelist()
 def preview_sector_kpi(scenario: str | None = None, params: str | None = None) -> dict:
 	"""SAP Wave C — sector KPI preview (omnexa_core bridge)."""
 	from omnexa_core.omnexa_core.vertical_api import preview_sector_kpi as _core_preview
 
 	return _core_preview("car_rental", scenario=scenario, params=params)
-

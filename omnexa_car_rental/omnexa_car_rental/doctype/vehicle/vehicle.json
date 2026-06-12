@@ -67,7 +67,7 @@
 			"fieldname": "category",
 			"fieldtype": "Select",
 			"label": "Category",
-			"options": "Economy\nSUV\nLuxury\nTruck",
+			"options": "Economy\nCompact\nSUV\nLuxury\nVan\nTruck\nElectric\nHybrid\nMotorcycle\nBus\nBoat\nYacht\nEquipment",
 			"reqd": 1
 		},
 		{

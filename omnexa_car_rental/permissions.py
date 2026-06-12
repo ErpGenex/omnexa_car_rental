@@ -8,6 +8,8 @@ from omnexa_core.omnexa_core.user_context import apply_company_branch_defaults
 
 
 def enforce_branch_access_for_doc(doc, method=None):
+	if frappe.session.user == "Guest" or getattr(doc.flags, "ignore_branch_access", False):
+		return
 	enforce_branch_access(doc)
 
 
@@ -77,4 +79,20 @@ def toll_invoice_line_query_conditions(user=None):
 def toll_provider_query_conditions(user=None):
 	"""Toll Provider is global config (no branch)."""
 	return ""
+
+
+def rental_rate_plan_query_conditions(user=None):
+	return _get_query_for_table("Rental Rate Plan", user)
+
+
+def rental_station_query_conditions(user=None):
+	return _get_query_for_table("Rental Station", user)
+
+
+def rental_vehicle_inspection_query_conditions(user=None):
+	return _get_query_for_table("Rental Vehicle Inspection", user)
+
+
+def maintenance_work_order_query_conditions(user=None):
+	return _get_query_for_table("Maintenance Work Order", user)
 

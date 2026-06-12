@@ -132,6 +132,10 @@ permission_query_conditions = {
 	"Toll Transaction": "omnexa_car_rental.permissions.toll_transaction_query_conditions",
 	"Toll Allocation Rule": "omnexa_car_rental.permissions.toll_allocation_rule_query_conditions",
 	"Toll Invoice Line": "omnexa_car_rental.permissions.toll_invoice_line_query_conditions",
+	"Rental Rate Plan": "omnexa_car_rental.permissions.rental_rate_plan_query_conditions",
+	"Rental Station": "omnexa_car_rental.permissions.rental_station_query_conditions",
+	"Rental Vehicle Inspection": "omnexa_car_rental.permissions.rental_vehicle_inspection_query_conditions",
+	"Maintenance Work Order": "omnexa_car_rental.permissions.maintenance_work_order_query_conditions",
 }
 #
 # has_permission = {
@@ -203,6 +207,22 @@ doc_events = {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
 		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
 	},
+	"Rental Rate Plan": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
+	"Rental Station": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
+	"Rental Vehicle Inspection": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
+	"Maintenance Work Order": {
+		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+	},
 }
 
 # Scheduled Tasks
@@ -220,6 +240,7 @@ scheduler_events = {
 	},
 	"daily": [
 		"omnexa_car_rental.fleet_reminders.run_daily",
+		"omnexa_car_rental.policy_renewal_tasks.run_policy_renewal_reminders",
 	],
 }
 

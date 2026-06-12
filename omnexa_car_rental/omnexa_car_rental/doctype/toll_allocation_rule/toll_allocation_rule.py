@@ -1,7 +1,4 @@
-# Copyright (c) 2026, Omnexa and contributors
-# License: See license.txt
-
-import frappe
+# Copyright (c) 2026, Omnexa
 from frappe.model.document import Document
 
 

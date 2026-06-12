@@ -1,0 +1,19 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-workshop-vendor-portal",
+	"page_name": "car-rental-workshop-vendor-portal",
+	"standard": "Yes",
+	"title": "Workshop Vendor Portal",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Fleet Manager"
+		},
+		{
+			"role": "Rental Agent"
+		}
+	]
+}
