@@ -14,7 +14,7 @@ required_apps = ["omnexa_accounting", "omnexa_fixed_assets", "omnexa_customer_co
 add_to_apps_screen = [
 	{
 		"name": "omnexa_car_rental",
-		"logo": "/assets/omnexa_car_rental/car-rental.svg",
+		"logo": "/assets/omnexa_car_rental/logo.png",
 		"title": "Car Rental",
 		"route": "/app/car-rental",
 	}
