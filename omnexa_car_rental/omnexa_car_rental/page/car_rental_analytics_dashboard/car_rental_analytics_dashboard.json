@@ -1,10 +1,10 @@
 {
 	"doctype": "Page",
 	"module": "Omnexa Car Rental",
-	"name": "car-rental-customer-portal",
-	"page_name": "car-rental-customer-portal",
+	"name": "car-rental-analytics-dashboard",
+	"page_name": "car-rental-analytics-dashboard",
 	"standard": "Yes",
-	"title": "Customer Portal",
+	"title": "Analytics Dashboard",
 	"roles": [
 		{
 			"role": "System Manager"

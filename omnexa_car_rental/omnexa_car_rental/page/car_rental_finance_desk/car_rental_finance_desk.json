@@ -1,10 +1,10 @@
 {
 	"doctype": "Page",
 	"module": "Omnexa Car Rental",
-	"name": "car-rental-customer-portal",
-	"page_name": "car-rental-customer-portal",
+	"name": "car-rental-finance-desk",
+	"page_name": "car-rental-finance-desk",
 	"standard": "Yes",
-	"title": "Customer Portal",
+	"title": "Finance Desk",
 	"roles": [
 		{
 			"role": "System Manager"
