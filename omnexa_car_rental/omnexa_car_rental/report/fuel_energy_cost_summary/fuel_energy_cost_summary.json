@@ -52,7 +52,7 @@
  "prepared_report": 0,
  "query": "",
  "ref_doctype": "Vehicle Fuel Log",
- "report_name": "Fuel & Energy Cost Summary",
+ "report_name": "Fuel Energy Cost Summary",
  "report_type": "Script Report",
  "roles": [
   {

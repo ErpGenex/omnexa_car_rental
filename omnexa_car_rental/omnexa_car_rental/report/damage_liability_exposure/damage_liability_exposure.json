@@ -58,7 +58,7 @@
  "prepared_report": 0,
  "query": "",
  "ref_doctype": "Vehicle Damage Report",
- "report_name": "Damage & Liability Exposure",
+ "report_name": "Damage Liability Exposure",
  "report_type": "Script Report",
  "roles": [
   {
