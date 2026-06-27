@@ -81,8 +81,10 @@ def ingest_payload(
 ) -> dict[str, Any]:
 	"""Create Toll Transaction from JSON body; optionally verify HMAC."""
 	prov = _provider_doc(provider_code)
-	if prov.webhook_secret and signature_header:
+	if prov.webhook_secret:
 		sec = prov.get_password("webhook_secret")
+		if not signature_header:
+			frappe.throw(frappe._("Missing webhook signature"), exc=frappe.ValidationError)
 		if not verify_webhook_signature(raw_body, sec, signature_header):
 			frappe.throw(frappe._("Invalid webhook signature"), exc=frappe.ValidationError)
 

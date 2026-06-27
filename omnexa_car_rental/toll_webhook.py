@@ -5,8 +5,7 @@
 
 import frappe
 from frappe import _
-
-from omnexa_car_rental.omnexa_car_rental.toll.toll_util import verify_webhook_signature
+from frappe.rate_limiter import rate_limit
 
 
 def _extract_signature() -> str | None:
@@ -24,6 +23,7 @@ def _extract_signature() -> str | None:
 
 
 @frappe.whitelist(allow_guest=True, methods=["POST"])
+@rate_limit(limit=300, seconds=60)
 def ingest():
 	"""POST JSON body with ?provider_code=SALIK or ?provider_code=DARB"""
 	provider_code = frappe.form_dict.get("provider_code") or frappe.request.args.get("provider_code")
