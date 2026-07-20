@@ -1,0 +1,15 @@
+{
+  "name": "Omnexa Car Rental",
+  "short_name": "OmnexaRent",
+  "start_url": "/car-rental-portal",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/assets/omnexa_car_rental/car-rental.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

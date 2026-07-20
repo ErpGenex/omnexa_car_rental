@@ -1,0 +1,137 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "field:plan_code",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"plan_code",
+		"plan_name",
+		"company",
+		"branch",
+		"column_break_1",
+		"vehicle_group",
+		"hourly_rate",
+		"daily_rate",
+		"weekly_rate",
+		"monthly_rate",
+		"currency",
+		"is_active"
+	],
+	"fields": [
+		{
+			"fieldname": "plan_code",
+			"fieldtype": "Data",
+			"label": "Plan Code",
+			"reqd": 1,
+			"unique": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "plan_name",
+			"fieldtype": "Data",
+			"label": "Plan Name",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1
+		},
+		{
+			"fieldname": "vehicle_group",
+			"fieldtype": "Link",
+			"label": "Vehicle Group",
+			"options": "Rental Vehicle Group"
+		},
+		{
+			"fieldname": "hourly_rate",
+			"fieldtype": "Currency",
+			"label": "Hourly Rate"
+		},
+		{
+			"fieldname": "daily_rate",
+			"fieldtype": "Currency",
+			"label": "Daily Rate",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "weekly_rate",
+			"fieldtype": "Currency",
+			"label": "Weekly Rate"
+		},
+		{
+			"fieldname": "monthly_rate",
+			"fieldtype": "Currency",
+			"label": "Monthly Rate"
+		},
+		{
+			"fieldname": "currency",
+			"fieldtype": "Link",
+			"label": "Currency",
+			"options": "Currency"
+		},
+		{
+			"fieldname": "is_active",
+			"fieldtype": "Check",
+			"label": "Is Active",
+			"default": "1"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Car Rental",
+	"name": "Rental Rate Plan",
+	"owner": "Administrator",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

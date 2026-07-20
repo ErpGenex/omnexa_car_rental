@@ -1,0 +1,95 @@
+{
+	"actions": [],
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"module": "Omnexa Car Rental",
+	"name": "Rental Contract Approval",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1,
+	"autoname": "format:APR-{YYYY}-{#####}",
+	"fields": [
+		{
+			"fieldname": "rental_contract",
+			"fieldtype": "Link",
+			"label": "Rental Contract",
+			"options": "Rental Contract",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "approver",
+			"fieldtype": "Link",
+			"label": "Approver",
+			"options": "User",
+			"reqd": 1
+		},
+		{
+			"fieldname": "approval_level",
+			"fieldtype": "Int",
+			"label": "Level",
+			"default": "1"
+		},
+		{
+			"default": "Pending",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Pending\nApproved\nRejected",
+			"in_list_view": 1
+		}
+	]
+}

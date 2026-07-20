@@ -1,0 +1,224 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "format:RNT-{YYYY}-{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"tab_break_overview",
+		"booking",
+		"customer_profile",
+		"vehicle",
+		"company",
+		"branch",
+		"column_break_omnexa_1",
+		"rental_mode",
+		"contract_start",
+		"contract_end",
+		"tab_break_details",
+		"grace_period_minutes",
+		"extension_rule",
+		"column_break_omnexa_2",
+		"early_return_policy",
+		"deposit_amount",
+		"insurance_coverage",
+		"status",
+		"total_amount",
+		"contract_manager"
+	],
+	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
+		{
+			"fieldname": "booking",
+			"fieldtype": "Link",
+			"label": "Booking",
+			"options": "Rental Booking"
+		},
+		{
+			"fieldname": "customer_profile",
+			"fieldtype": "Link",
+			"label": "Customer Profile",
+			"options": "Customer Profile",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "vehicle",
+			"fieldtype": "Link",
+			"label": "Vehicle",
+			"options": "Vehicle",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "rental_mode",
+			"fieldtype": "Select",
+			"label": "Rental Mode",
+			"options": "Self Drive\nWith Driver",
+			"reqd": 1
+		},
+		{
+			"fieldname": "contract_start",
+			"fieldtype": "Datetime",
+			"label": "Contract Start",
+			"reqd": 1
+		},
+		{
+			"fieldname": "contract_end",
+			"fieldtype": "Datetime",
+			"label": "Contract End",
+			"reqd": 1
+		},
+		{
+			"fieldname": "grace_period_minutes",
+			"fieldtype": "Int",
+			"label": "Grace Period (Minutes)",
+			"default": "0"
+		},
+		{
+			"fieldname": "extension_rule",
+			"fieldtype": "Small Text",
+			"label": "Extension Rule"
+		},
+		{
+			"fieldname": "early_return_policy",
+			"fieldtype": "Small Text",
+			"label": "Early Return Policy"
+		},
+		{
+			"fieldname": "deposit_amount",
+			"fieldtype": "Currency",
+			"label": "Security Deposit",
+			"default": "0"
+		},
+		{
+			"fieldname": "insurance_coverage",
+			"fieldtype": "Select",
+			"label": "Insurance Coverage",
+			"options": "Full\nPartial\nNone",
+			"default": "Partial"
+		},
+		{
+			"allow_on_submit": 1,
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nActive Rental\nReturned\nClosed\nCancelled",
+			"default": "Draft",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "total_amount",
+			"fieldtype": "Currency",
+			"label": "Total Amount",
+			"default": "0"
+		},
+		{
+			"fieldname": "contract_manager",
+			"fieldtype": "Link",
+			"label": "Contract Manager",
+			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"is_submittable": 1,
+	"links": [
+		{
+			"group": "Booking",
+			"link_doctype": "Rental Booking",
+			"link_fieldname": "booking"
+		}
+	],
+	"module": "Omnexa Car Rental",
+	"name": "Rental Contract",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"submit": 1,
+			"cancel": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"submit": 1,
+			"cancel": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"submit": 1,
+			"cancel": 0,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		},
+		{
+			"role": "Accountant",
+			"read": 1,
+			"write": 0,
+			"create": 0,
+			"delete": 0,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 0
+		}
+	],
+	"track_changes": 1
+}

@@ -1,0 +1,268 @@
+{
+	"actions": [],
+	"allow_rename": 0,
+	"autoname": "format:TPR-{#####}",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"tab_break_overview",
+		"provider_code",
+		"provider_name",
+		"integration_type",
+		"is_active",
+		"column_break_cfg",
+		"endpoint_url",
+		"poll_interval_minutes",
+		"last_poll_at",
+		"tab_break_1",
+		"section_auth",
+		"webhook_secret",
+		"auth_header_name",
+		"auth_token",
+		"column_break_oauth",
+		"sandbox_mode",
+		"oauth_token_url",
+		"client_id",
+		"client_secret",
+		"api_transactions_path",
+		"last_sync_token",
+		"section_defaults",
+		"default_currency",
+		"default_country",
+		"column_break_omnexa_1",
+		"deduplication_window_seconds",
+		"default_sales_item",
+		"tab_break_3",
+		"section_notes",
+		"notes"
+	],
+	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_1",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
+		{
+			"fieldname": "tab_break_2",
+			"fieldtype": "Tab Break",
+			"label": "Further"
+		},
+		{
+			"fieldname": "tab_break_3",
+			"fieldtype": "Tab Break",
+			"label": "Posting"
+		},
+		{
+			"fieldname": "provider_code",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Provider Code",
+			"reqd": 1,
+			"unique": 1,
+			"description": "e.g. SALIK, DARB, CUSTOM"
+		},
+		{
+			"fieldname": "provider_name",
+			"fieldtype": "Data",
+			"in_list_view": 1,
+			"label": "Provider Name",
+			"reqd": 1
+		},
+		{
+			"fieldname": "integration_type",
+			"fieldtype": "Select",
+			"label": "Integration Type",
+			"options": "API Webhook\nAPI Polling\nBatch File",
+			"reqd": 1,
+			"default": "API Webhook"
+		},
+		{
+			"fieldname": "is_active",
+			"fieldtype": "Check",
+			"label": "Active",
+			"default": 1
+		},
+		{
+			"fieldname": "column_break_cfg",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "endpoint_url",
+			"fieldtype": "Data",
+			"label": "API Base URL"
+		},
+		{
+			"fieldname": "poll_interval_minutes",
+			"fieldtype": "Int",
+			"label": "Poll Interval (Minutes)",
+			"default": 15
+		},
+		{
+			"fieldname": "last_poll_at",
+			"fieldtype": "Datetime",
+			"label": "Last Poll At",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_auth",
+			"fieldtype": "Section Break",
+			"label": "Authentication"
+		},
+		{
+			"fieldname": "webhook_secret",
+			"fieldtype": "Password",
+			"label": "Webhook HMAC Secret"
+		},
+		{
+			"fieldname": "auth_header_name",
+			"fieldtype": "Data",
+			"label": "Auth Header Name"
+		},
+		{
+			"fieldname": "auth_token",
+			"fieldtype": "Password",
+			"label": "Auth Token / API Key"
+		},
+		{
+			"fieldname": "column_break_oauth",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "sandbox_mode",
+			"fieldtype": "Check",
+			"label": "Sandbox Mode",
+			"default": "0",
+			"description": "Simulated Salik/DARB transactions without live API"
+		},
+		{
+			"fieldname": "oauth_token_url",
+			"fieldtype": "Data",
+			"label": "OAuth Token URL"
+		},
+		{
+			"fieldname": "client_id",
+			"fieldtype": "Data",
+			"label": "OAuth Client ID"
+		},
+		{
+			"fieldname": "client_secret",
+			"fieldtype": "Password",
+			"label": "OAuth Client Secret"
+		},
+		{
+			"fieldname": "api_transactions_path",
+			"fieldtype": "Data",
+			"label": "Transactions API Path"
+		},
+		{
+			"fieldname": "last_sync_token",
+			"fieldtype": "Small Text",
+			"label": "Last Sync Cursor",
+			"read_only": 1
+		},
+		{
+			"fieldname": "section_defaults",
+			"fieldtype": "Section Break",
+			"label": "Defaults & Rules"
+		},
+		{
+			"fieldname": "default_currency",
+			"fieldtype": "Link",
+			"label": "Default Currency",
+			"options": "Currency"
+		},
+		{
+			"fieldname": "default_country",
+			"fieldtype": "Data",
+			"label": "Default Country (ISO)"
+		},
+		{
+			"fieldname": "deduplication_window_seconds",
+			"fieldtype": "Int",
+			"label": "Dedup Window (Seconds)",
+			"default": 120
+		},
+		{
+			"fieldname": "default_sales_item",
+			"fieldtype": "Link",
+			"label": "Default Item (Sales Invoice)",
+			"options": "Item"
+		},
+		{
+			"fieldname": "section_notes",
+			"fieldtype": "Section Break",
+			"label": "Notes"
+		},
+		{
+			"fieldname": "notes",
+			"fieldtype": "Text Editor",
+			"label": "Notes"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		}
+	],
+	"index_web_pages_for_search": 1,
+	"links": [],
+	"module": "Omnexa Car Rental",
+	"name": "Toll Provider",
+	"permissions": [
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "System Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 1,
+			"delete": 1,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Fleet Manager",
+			"share": 1,
+			"write": 1
+		},
+		{
+			"create": 0,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Rental Agent",
+			"share": 0,
+			"write": 0
+		},
+		{
+			"create": 0,
+			"delete": 0,
+			"email": 1,
+			"export": 1,
+			"print": 1,
+			"read": 1,
+			"report": 1,
+			"role": "Accountant",
+			"share": 0,
+			"write": 0
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

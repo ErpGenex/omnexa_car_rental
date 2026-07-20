@@ -1,0 +1,22 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-customer-portal",
+	"page_name": "car-rental-customer-portal",
+	"standard": "Yes",
+	"title": "Car Rental Customer Portal",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Car Rental Manager"
+		},
+		{
+			"role": "Car Rental User"
+		},
+		{
+			"role": "Car Rental Customer Portal"
+		}
+	]
+}

@@ -1,0 +1,445 @@
+Account Code,حساب كود
+Account Name,حساب اسم
+Acquisition Date,Acquisition تاريخ
+Acriss Code,Acriss كود
+Active,نشط
+Actual Restore,Actual Restore
+Additional,Additional
+Address,العنوان
+Agent Code,Agent كود
+Agent Name,Agent اسم
+Agent Tablet Check-In/Out,Agent Tablet فحص - In Out
+Alert Type,Alert نوع
+Allocation,Allocation
+Allocation Rule,Allocation Rule
+Amount,مبلغ
+Amount (Company Currency),مبلغ (شركة Currency)
+amount is required in payload,مبلغ is required in payload
+API Base URL,API Base URL
+API Base URL is required for provider {0},API Base URL is required لـ provider { 0 }
+API Endpoint,API Endpoint
+App Version,App إصدار
+Approver,Approver
+Asset Owner,Asset Owner
+Audit Trail,تدقيق Trail
+Auth Header Name,Auth Header اسم
+Auth Token / API Key,Auth Token API مفتاح
+Authentication,Authentication
+Availability,Availability
+Balance,الرصيد
+Billing Method,فوترة Method
+Billing Method Applied,فوترة Method Applied
+Billing skipped or not applicable,فوترة skipped or not applicable
+Booking,Booking
+Booking created successfully.,Booking created successfully.
+Booking pipeline,Booking pipeline
+Booking Reference,Booking Reference
+Booking Status,Booking حالة
+Bookings,Bookings
+Branch,الفرع
+Campaign Name,Campaign اسم
+Cancelled booking cannot be converted.,ملغى booking cannot be converted.
+Car Rental,سيارة Rental
+Car Rental Workcenter,سيارة Rental Workcenter
+car-rental-analytics-dashboard,سيارة - rental - تحليلات - لوحة معلومات
+car-rental-customer-portal,سيارة - rental - عميل - بوابة
+car-rental-executive-dashboard,سيارة - rental - تنفيذي - لوحة معلومات
+car-rental-finance-desk,سيارة - rental - مالية - desk
+car-rental-operations-desk,سيارة - rental - عمليات - desk
+Category,الفئة
+Center Lat,Center Lat
+Center Lng,Center Lng
+Change Summary,Change ملخص
+Channel,Channel
+Channel Code,Channel كود
+Channel Name,Channel اسم
+Claim Amount,Claim مبلغ
+Commercial & finance,Commercial & مالية
+Commission %,Commission%
+Company,الشركة
+Company and branch are required,شركة و فرع are required
+company and branch are required when vehicle cannot be resolved. Supply them in the payload.,شركة و فرع are required when مركبة cannot be resolved. Supply them in the payload.
+Company Clearing / Accrual (Credit),شركة Clearing Accrual (ائتمان)
+Company filter is required.,شركة filter is required.
+Company is required (set filter or user default).,شركة is required (set filter or مستخدم افتراضي).
+"Company, branch, start and end are required","شركة, فرع, بداية و نهاية are required"
+Completed On,مكتمل On
+Connection OK,Connection OK
+Contract End,عقد نهاية
+Contract Manager,عقد مدير
+Contract Start,عقد بداية
+Contract summary,عقد ملخص
+Contracts,Contracts
+Control ID,تحكم معرف
+Corporate Account,Corporate حساب
+Cost / KM,تكلفة KM
+Cost Amount,تكلفة مبلغ
+Cost Center,مركز التكلفة
+Cost/Day,تكلفة Day
+Cost/KM,تكلفة KM
+Counter check-in and return workflow,Counter فحص - in و return سير العمل
+Country,Country
+Country Code,Country كود
+Country Name,Country اسم
+Course,Course
+Coverage Type,Coverage نوع
+Create Customer Invoice,Create عميل فاتورة
+Create Rental Contract,Create Rental عقد
+Credit Limit,ائتمان Limit
+Credit limit exceeded.,ائتمان limit exceeded.
+Credit side for company-absorbed tolls and internal cost journal entries,ائتمان side لـ شركة - absorbed tolls و internal تكلفة يومية entries
+Crossing,Crossing
+Crossing Date/Time,Crossing تاريخ Time
+crossing_datetime is required in payload,crossing datetime is required in payload
+Crossings,Crossings
+Currency,Currency
+currency is required in payload,currency is required in payload
+Customer,العميل
+Customer (Billing),عميل (فوترة)
+Customer ledger,عميل دفتر أستاذ
+Customer Profile,ملف العميل
+Daily Rate,يومي معدل
+Damage & liability,Damage & liability
+Damage Notes,Damage Notes
+Damage Report,Damage تقرير
+Date,التاريخ
+Dedup Window (Seconds),Dedup Window (Seconds)
+Default Country (ISO),افتراضي Country (ISO)
+Default Currency,افتراضي Currency
+Default Item (Sales Invoice),افتراضي صنف (مبيعات فاتورة)
+Defaults & Rules,Defaults & Rules
+"Demand, maintenance, churn analytics","Demand, maintenance, churn تحليلات"
+Deposits,Deposits
+Description,الوصف
+Details,التفاصيل
+Device ID,Device معرف
+Device Token,Device Token
+Discount Percent,Discount Percent
+Disposal Date,Disposal تاريخ
+Driver,Driver
+Driver license expiring on {0}: {1} ({2}),Driver license expiring on { 0 }: { 1 } ({ 2 })
+Driver Name,Driver اسم
+Duplicate Of,Duplicate Of
+"e.g. SALIK, DARB, CUSTOM","e. g. SALIK, DARB, CUSTOM"
+Early Return Policy,Early Return سياسة
+Effective From,Effective From
+End,نهاية
+End Date,تاريخ الانتهاء
+End Date-Time,نهاية تاريخ - Time
+End must be after start,نهاية must be after بداية
+Entry Time,قيد Time
+Estimated Amount,Estimated مبلغ
+Estimated Cost,Estimated تكلفة
+Estimated Damage Cost,Estimated Damage تكلفة
+EV Charging Session,EV Charging Session
+Evidence,دليل
+Exchange Rate,Exchange معدل
+Exit Time,Exit Time
+Expiry Date,Expiry تاريخ
+Extension request recorded.,Extension طلب recorded.
+Extension Rule,Extension Rule
+External Transaction ID,External معاملة معرف
+Extra Code,Extra كود
+Filters,Filters
+Financial,مالي
+Fine Amount,Fine مبلغ
+Fixed Rent Amount,ثابتة Rent مبلغ
+Fleet care & risk,Fleet care & مخاطر
+Fleet Model,Fleet Model
+Fleet utilization,Fleet utilization
+Franchise Rollup Dashboard,Franchise Rollup لوحة معلومات
+Fuel & energy cost,Fuel & energy تكلفة
+Fuel Card Reference,Fuel Card Reference
+Fuel Cost,Fuel تكلفة
+Fuel Cost Allocation,Fuel تكلفة Allocation
+Fuel Level,Fuel Level
+Fuel Level %,Fuel Level%
+Fuel Liters,Fuel Liters
+Further,Further
+Gate / Location Name,Gate Location اسم
+Gate Code,Gate كود
+General ledger,عام دفتر أستاذ
+GET {0} failed ({1}): {2},GET { 0 } فشل ({ 1 }): { 2 }
+GL Account,GL حساب
+Grace Period (Minutes),Grace Period (Minutes)
+Group Code,Group كود
+Group Name,Group اسم
+Guest API,Guest API
+Hourly Rate,Hourly معدل
+IFRS 15 Phase,IFRS 15 Phase
+Incident Start,Incident بداية
+Included KM,Included KM
+Inspection Type,Inspection نوع
+Installed On,Installed On
+Insurance Claim Required,Insurance Claim Required
+Insurance Claims,Insurance Claims
+Insurance Coverage,Insurance Coverage
+Insurance Provider,Insurance Provider
+Insurer Reference,Insurer Reference
+Integration Type,تكامل نوع
+Interval KM,Interval KM
+Invalid JSON body,Invalid JSON body
+Invalid JSON from {0}: {1},Invalid JSON from { 0 }: { 1 }
+Invalid webhook signature,Invalid webhook signature
+Invoice Item,فاتورة صنف
+Is Active,Is نشط
+Is Airport,Is Airport
+ISO Domain,ISO Domain
+Journal Entry,قيد يومية
+KM Driven,KM Driven
+kWh Delivered,k Wh Delivered
+L / 100 KM,L 100 KM
+Last Poll At,Last Poll At
+Last Sync Cursor,Last Sync Cursor
+Last Tested,Last Tested
+Latitude,Latitude
+Level,Level
+Liability,Liability
+License Country,License Country
+License Expiry Date,License Expiry تاريخ
+License Number,License رقم
+Line Reference,Line Reference
+Links,Links
+Live chat session started.,Live chat session started.
+Load omnexa_core vertical portal desk,Load omnexa أساسي vertical بوابة desk
+Load omnexa_core vertical workcenter kit,Load omnexa أساسي vertical workcenter kit
+Logs,Logs
+Longitude,Longitude
+Maintenance cost analysis,Maintenance تكلفة analysis
+Maintenance Type,Maintenance نوع
+Maintenance Work Order,Maintenance Work Order
+Match Customer Group,Match عميل Group
+Match Customer Type,Match عميل نوع
+Match Rental Mode,Match Rental Mode
+Match Source,Match Source
+Match Vehicle Category,Match مركبة فئة
+Matching & Allocation,Matching & Allocation
+Method,Method
+Min Rentals,Min Rentals
+Missing webhook signature,Missing webhook signature
+Model,Model
+Monthly Fee,Monthly Fee
+Monthly Rate,Monthly معدل
+More,More
+Multi-branch franchise KPIs,Multi - فرع franchise KPIs
+Next Due Date,Next استحقاق تاريخ
+No API client for provider code {0},No API client لـ provider كود { 0 }
+Notes,Notes
+OAuth Client ID,OAuth Client معرف
+OAuth Client Secret,OAuth Client Secret
+OAuth response missing access_token,OAuth response missing وصول token
+OAuth token request failed ({0}): {1},OAuth token طلب فشل ({ 0 }): { 1 }
+OAuth Token URL,OAuth Token URL
+Odometer,Odometer
+Odometer (KM),Odometer (KM)
+Omnexa Car Rental,Omnexa سيارة Rental
+Online Booking Desk,Online Booking Desk
+Open Booking,مفتوح Booking
+Open Rental Bookings,مفتوح Rental Bookings
+Open Rental Contract,مفتوح Rental عقد
+Operations,عمليات
+Organisation,Organisation
+Organization & fleet,Organization & fleet
+Overview,نظرة عامة
+Part Code,Part كود
+Part Name,Part اسم
+Payer,Payer
+Payment Entry,دفعة قيد
+Performance Score,أداء درجة
+Period (YYYY-MM),Period (YYYY - MM)
+Plan Code,خطة كود
+Plan Name,خطة اسم
+Plate Number,Plate رقم
+Plate Number (as reported),Plate رقم (as reported)
+Platform,Platform
+Policy,سياسة
+Policy Number,سياسة رقم
+Poll Interval (Minutes),Poll Interval (Minutes)
+Position,Position
+Post Journal Entry (Company / Internal),Post يومية قيد (شركة Internal)
+Posting,Posting
+Posting Date,Posting تاريخ
+Predicted On,Predicted On
+Predictive Analytics Board,Predictive تحليلات Board
+Premium Amount,Premium مبلغ
+Priority,Priority
+Proceeds,Proceeds
+Project Contract,مشروع عقد
+Provider,Provider
+Provider Code,Provider كود
+Provider Name,Provider اسم
+provider_code is required (SALIK or DARB),provider كود is required (SALIK or DARB)
+Purchase Amount,شراء مبلغ
+Qty On Hand,Qty On Hand
+Quote,Quote
+Radius KM,Radius KM
+Rate Type,معدل نوع
+Raw Payload (JSON),Raw Payload (JSON)
+Reason,Reason
+Recognition Date,Recognition تاريخ
+Recognized Amount,Recognized مبلغ
+Recorded At,Recorded At
+Records,Records
+References,References
+Refresh FX,Refresh FX
+Regulatory Notes,Regulatory Notes
+Remarks,Remarks
+Rental Booking,Rental Booking
+Rental Contract,Rental عقد
+Rental Contract Approval,Rental عقد موافقة
+Rental Contract Signature,Rental عقد Signature
+Rental Contract Version,Rental عقد إصدار
+Rental Corporate Account,Rental Corporate حساب
+Rental Country Pack,Rental Country Pack
+Rental CRM Campaign,Rental CRM Campaign
+Rental Customer Blacklist,Rental عميل Blacklist
+Rental Customer Wallet,Rental عميل Wallet
+Rental Downtime SLA,Rental Downtime SLA
+Rental DR Runbook,Rental DR Runbook
+Rental Driver,Rental Driver
+Rental Driver Mix,Rental Driver Mix
+Rental Driver Training,Rental Driver Training
+Rental Driver Violation,Rental Driver Violation
+Rental Extra Service,Rental Extra خدمة
+Rental Franchise Agent,Rental Franchise Agent
+Rental Fuel IoT Reading,Rental Fuel Io T Reading
+Rental Geofence Zone,Rental Geofence Zone
+Rental Group Booking,Rental Group Booking
+Rental Insurance Claim,Rental Insurance Claim
+Rental ISO Control,Rental ISO تحكم
+Rental Leasing Template,Rental Leasing Template
+Rental Loyalty Tier,Rental Loyalty Tier
+Rental Mobile Device Token,Rental Mobile Device Token
+Rental Mode,Rental Mode
+Rental OTA Channel,Rental OTA Channel
+Rental Predictive Alert,Rental Predictive Alert
+Rental Preventive Schedule,Rental Preventive Schedule
+Rental Rate Plan,Rental معدل خطة
+Rental Revenue Recognition,Rental إيرادات Recognition
+Rental Spare Part,Rental Spare Part
+Rental Station,Rental Station
+Rental Subscription Plan,Rental اشتراك خطة
+Rental Type,Rental نوع
+Rental Vehicle Group,Rental مركبة Group
+Rental Vehicle Inspection,Rental مركبة Inspection
+Rental Warranty Claim,Rental Warranty Claim
+Reorder Level,Reorder Level
+Report Date,تقرير تاريخ
+Report Reference,تقرير Reference
+Reports,تقارير
+Reports · Finance,تقارير · مالية
+Require Project Contract,Require مشروع عقد
+Reservations & contracts,Reservations & contracts
+Revenue / Recharge Account,إيرادات Recharge حساب
+Revenue Account,إيرادات حساب
+Revenue per vehicle,إيرادات per مركبة
+Revenue Share %,إيرادات Share%
+Risk Score,مخاطر درجة
+RPO (hours),RPO (hours)
+RTO (hours),RTO (hours)
+Rule Name,Rule اسم
+Rule Owner,Rule Owner
+Run Matching,Run Matching
+Runbook Name,Runbook اسم
+Sales Invoice,فاتورة بيع
+Sales register,سجل المبيعات
+"Salik, DARB, or other e-tag identifier for toll matching","Salik, DARB, or other e - tag identifier لـ toll matching"
+Sandbox Mode,Sandbox Mode
+Scheduled Date,Scheduled تاريخ
+Seats,Seats
+Security Deposit,Security Deposit
+Segment,Segment
+Series,Series
+Service Provider,خدمة Provider
+Service Type,خدمة نوع
+Settlement Cycle,Settlement Cycle
+Severity,Severity
+Signature Token,Signature Token
+Signed By,Signed حسب
+Signed On,Signed On
+Simulated Salik/DARB transactions without live API,Simulated Salik DARB transactions without live API
+Speed (km/h),Speed (km h)
+Start,بداية
+Start Date,بداية تاريخ
+Start Date-Time,بداية تاريخ - Time
+Station,Station
+Station Code,Station كود
+Station Name,Station اسم
+Status,الحالة
+Status Bar,حالة Bar
+Steps,Steps
+Supplier,المورد
+Supplier Fleet Contract,مورد Fleet عقد
+Supplier Reference,مورد Reference
+Sync Complete,Sync Complete
+Sync Now,Sync Now
+Tab 8,Tab 8
+Tab 9,Tab 9
+Tag / RFID,Tag RFID
+Target Restore,Target Restore
+Tax Amount,Tax مبلغ
+Tax Template,Tax Template
+Template Code,Template كود
+Template Name,Template اسم
+Term (Months),Term (Months)
+Terms,Terms
+Test Connection,Test Connection
+Tier Code,Tier كود
+Tier Name,Tier اسم
+Title,العنوان
+Toll & Highways,Toll & Highways
+Toll Allocation Rule,Toll Allocation Rule
+Toll cost summary,Toll تكلفة ملخص
+Toll Expense Account,Toll مصروف حساب
+Toll Invoice Line,Toll فاتورة Line
+Toll Provider,Toll Provider
+Toll Provider is inactive: {0},Toll Provider is غير نشط: { 0 }
+Toll Provider not found: {0},Toll Provider not found: { 0 }
+Toll Tag / RFID,Toll Tag RFID
+Toll Transaction,Toll معاملة
+Tolls & road charges,Tolls & road charges
+Total Amount,إجمالي مبلغ
+Total Cost,إجمالي تكلفة
+Total Revenue,إجمالي إيرادات
+Transaction Reference,معاملة Reference
+transaction_id is required in payload,معاملة معرف is required in payload
+Transactions API Path,Transactions API Path
+Transmission,Transmission
+Tread Depth (mm),Tread Depth (mm)
+Type,النوع
+Unknown Toll Provider: {0},Unknown Toll Provider: { 0 }
+User,المستخدم
+Utilization %,Utilization%
+Vehicle,مركبة
+Vehicle Acquisition,مركبة Acquisition
+Vehicle Class,مركبة Class
+Vehicle Damage Report,مركبة Damage تقرير
+Vehicle Disposal,مركبة Disposal
+Vehicle Fuel Log,مركبة Fuel سجل
+Vehicle GPS Track,مركبة GPS Track
+Vehicle Group,مركبة Group
+Vehicle insurance expiring on {0}: policy {1} — vehicle {2},مركبة insurance expiring on { 0 }: سياسة { 1 } — مركبة { 2 }
+Vehicle Insurance Policy,مركبة Insurance سياسة
+Vehicle is not available for the selected period.,مركبة is not متاح لـ the selected period.
+Vehicle Maintenance Record,مركبة Maintenance سجل
+Vehicle Mix,مركبة Mix
+Vehicle Source Type,مركبة Source نوع
+Vehicle Tire Record,مركبة Tire سجل
+Vehicles,Vehicles
+Vendor,Vendor
+Vendor maintenance portal,Vendor maintenance بوابة
+Version,إصدار
+VIN / Chassis Number,VIN Chassis رقم
+Walk-In Kiosk,Walk - In Kiosk
+Walk-in rental kiosk mode,Walk - in rental kiosk mode
+Webhook HMAC Secret,Webhook HMAC Secret
+Weekly Rate,Weekly معدل
+Work Order,Work Order
+Work Order Type,Work Order نوع
+Workflow,سير العمل
+Workshop Vendor Portal,Workshop Vendor بوابة
+Year,Year
+Zone Name,Zone اسم
+{0} is required,{ 0 } is required
+{hint},{ hint }
+{title},{ عنوان }

@@ -1,0 +1,16 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-analytics-dashboard",
+	"page_name": "car-rental-analytics-dashboard",
+	"standard": "Yes",
+	"title": "Analytics Dashboard",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "Company Admin"
+		}
+	]
+}

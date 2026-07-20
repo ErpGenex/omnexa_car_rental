@@ -1,0 +1,13 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Car Rental",
+	"name": "car-rental-booking-desk",
+	"page_name": "car-rental-booking-desk",
+	"standard": "Yes",
+	"title": "Online Booking Desk",
+	"roles": [
+		{"role": "System Manager"},
+		{"role": "Fleet Manager"},
+		{"role": "Rental Agent"}
+	]
+}

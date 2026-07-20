@@ -1,0 +1,38 @@
+---
+no_breadcrumbs: 1
+full_width: 1
+no_header: 1
+---
+
+{% extends "templates/web.html" %}
+
+{% block head_include %}
+{{ super() }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{% endblock %}
+
+{% block title %}Omnexa Car Rental | تأجير السيارات{% endblock %}
+
+{% block page_content %}
+<div class="car-rental-site car-rental-premium" data-page="home">
+  <header class="car-rental-header" id="car-rental-header"></header>
+  <section class="car-rental-hero car-rental-hero-premium" id="car-rental-hero"></section>
+  <div class="car-rental-value-bar" id="car-rental-trust-strip"></div>
+  <section class="car-rental-section car-rental-reveal" id="car-rental-fleet-section"></section>
+  <section class="car-rental-section car-rental-section-alt car-rental-reveal" id="car-rental-services-section"></section>
+  <section class="car-rental-stats car-rental-reveal" id="car-rental-stats"></section>
+  <section class="car-rental-cta-band car-rental-reveal" id="car-rental-cta-band"></section>
+  <footer class="car-rental-footer" id="car-rental-footer"></footer>
+</div>
+<script>
+  (function () {
+    function boot() {
+      if (window.CarRentalSite) window.CarRentalSite.init("home");
+    }
+    if (typeof frappe !== "undefined" && frappe.ready) frappe.ready(boot);
+    else if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+    else boot();
+  })();
+</script>
+{% endblock %}

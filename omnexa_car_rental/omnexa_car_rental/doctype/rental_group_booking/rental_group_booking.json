@@ -1,0 +1,100 @@
+{
+	"actions": [],
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"module": "Omnexa Car Rental",
+	"name": "Rental Group Booking",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 1,
+			"report": 1
+		},
+		{
+			"role": "Fleet Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 1,
+			"print": 1,
+			"email": 1,
+			"share": 0,
+			"report": 1
+		},
+		{
+			"role": "Rental Agent",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 0,
+			"export": 0,
+			"print": 1,
+			"email": 0,
+			"share": 0,
+			"report": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1,
+	"autoname": "format:GRP-{YYYY}-{#####}",
+	"fields": [
+		{
+			"fieldname": "company",
+			"fieldtype": "Link",
+			"label": "Company",
+			"options": "Company",
+			"reqd": 1
+		},
+		{
+			"fieldname": "branch",
+			"fieldtype": "Link",
+			"label": "Branch",
+			"options": "Branch",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "corporate_account",
+			"fieldtype": "Link",
+			"label": "Corporate Account",
+			"options": "Rental Corporate Account",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "vehicle_count",
+			"fieldtype": "Int",
+			"label": "Vehicles",
+			"reqd": 1
+		},
+		{
+			"fieldname": "start_datetime",
+			"fieldtype": "Datetime",
+			"label": "Start",
+			"reqd": 1
+		},
+		{
+			"fieldname": "end_datetime",
+			"fieldtype": "Datetime",
+			"label": "End",
+			"reqd": 1
+		},
+		{
+			"default": "Draft",
+			"fieldname": "status",
+			"fieldtype": "Select",
+			"label": "Status",
+			"options": "Draft\nConfirmed\nCancelled",
+			"in_list_view": 1
+		}
+	]
+}
