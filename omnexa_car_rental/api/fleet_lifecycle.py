@@ -21,11 +21,12 @@ def record_vehicle_acquisition(vehicle: str, purchase_amount: float, supplier: s
 			"acquisition_date": today(),
 			"purchase_amount": flt(purchase_amount),
 			"supplier": supplier,
-			"status": "Completed",
-		}
+			"status": "Completed"
+	}
 	)
 	doc.insert()
-	return {"acquisition": doc.name}
+	return {"acquisition": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -40,13 +41,14 @@ def record_vehicle_disposal(vehicle: str, method: str = "Sale", proceeds: float 
 			"disposal_date": today(),
 			"disposal_method": method,
 			"proceeds": flt(proceeds),
-			"status": "Completed",
-		}
+			"status": "Completed"
+	}
 	)
 	doc.insert()
 	v.status = "Disposed"
 	v.save()
-	return {"disposal": doc.name}
+	return {"disposal": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -65,11 +67,12 @@ def submit_warranty_claim(vehicle: str, claim_amount: float, work_order: str | N
 			"company": v.company,
 			"branch": v.branch,
 			"claim_amount": flt(claim_amount),
-			"status": "Open",
-		}
+			"status": "Open"
+	}
 	)
 	doc.insert()
-	return {"claim": doc.name}
+	return {"claim": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -85,8 +88,9 @@ def track_downtime_sla(vehicle: str, target_hours: int = 24) -> dict:
 			"branch": v.branch,
 			"incident_start": now_datetime(),
 			"target_restore": add_to_date(now_datetime(), hours=target_hours),
-			"status": "Open",
-		}
+			"status": "Open"
+	}
 	)
 	doc.insert()
-	return {"sla": doc.name}
+	return {"sla": doc.name
+	}

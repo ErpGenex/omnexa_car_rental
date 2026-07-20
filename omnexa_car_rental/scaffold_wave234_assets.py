@@ -9,7 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 APP = ROOT / "omnexa_car_rental"
 PUBLIC = ROOT / "public"
-ROLES = [{"role": "System Manager"}, {"role": "Fleet Manager"}, {"role": "Rental Agent"}]
+ROLES = [{"role": "System Manager"
+	}, {"role": "Fleet Manager"
+	}, {"role": "Rental Agent"
+	}]
 
 PAGES = [
 	("car_rental_customer_portal", "car-rental-customer-portal", "Car Rental Customer Portal", "Self-service booking, payments, extensions"),
@@ -30,7 +33,8 @@ def _page(folder: str, page_name: str, title: str, hint: str) -> None:
 	path.mkdir(parents=True, exist_ok=True)
 	(path / f"{folder}.json").write_text(
 		json.dumps(
-			{"doctype": "Page", "module": "Omnexa Car Rental", "name": page_name, "page_name": page_name, "standard": "Yes", "title": title, "roles": ROLES},
+			{"doctype": "Page", "module": "Omnexa Car Rental", "name": page_name, "page_name": page_name, "standard": "Yes", "title": title, "roles": ROLES
+	},
 			indent="\t",
 		)
 		+ "\n"
@@ -61,15 +65,17 @@ def _report(folder: str, ref: str, title: str) -> None:
 				"ref_doctype": ref,
 				"report_name": title,
 				"report_type": "Script Report",
-				"roles": [{"role": "System Manager"}, {"role": "Fleet Manager"}, {"role": "Report Manager"}],
-			},
+				"roles": [{"role": "System Manager"
+	}, {"role": "Fleet Manager"
+	}, {"role": "Report Manager"}]
+	},
 			indent="\t",
 		)
 		+ "\n"
 	)
 	(path / f"{folder}.py").write_text(
 		f'import frappe\nfrom frappe.utils import flt\n\n\ndef execute(filters=None):\n'
-		f'\tcolumns = [\n\t\t{{"label": "Vehicle", "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 160}},\n'
+		f'\t\t{{"label": "Vehicle", "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 160}},\n'
 		f'\t\t{{"label": "Cost/Day", "fieldname": "cost_per_day", "fieldtype": "Currency", "width": 120}},\n'
 		f'\t\t{{"label": "Cost/KM", "fieldname": "cost_per_km", "fieldtype": "Currency", "width": 120}},\n\t]\n'
 		f'\tdata = []\n\tfor v in frappe.get_all("Vehicle", fields=["name", "plate_number"], limit=200):\n'
@@ -93,8 +99,8 @@ def _pwa() -> None:
 				"display": "standalone",
 				"background_color": "#0f172a",
 				"theme_color": "#2563eb",
-				"icons": [{"src": "/assets/omnexa_car_rental/car-rental.svg", "sizes": "192x192", "type": "image/svg+xml"}],
-			},
+				"icons": [{"src": "/assets/omnexa_car_rental/car-rental.svg", "sizes": "192x192", "type": "image/svg+xml"}]
+	},
 			indent=2,
 		)
 		+ "\n"

@@ -58,10 +58,16 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Booking Status"), "fieldname": "booking_status", "fieldtype": "Data", "width": 120},
-		{"label": _("Rental Type"), "fieldname": "rental_type", "fieldtype": "Data", "width": 130},
-		{"label": _("Rental Mode"), "fieldname": "rental_mode", "fieldtype": "Data", "width": 120},
-		{"label": _("Bookings"), "fieldname": "booking_count", "fieldtype": "Int", "width": 90},
-		{"label": _("Estimated Amount"), "fieldname": "estimated_amount", "fieldtype": "Currency", "width": 140},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Booking Status"), "fieldname": "booking_status", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Rental Type"), "fieldname": "rental_type", "fieldtype": "Data", "width": 130
+	},
+		{"label": _("Rental Mode"), "fieldname": "rental_mode", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Bookings"), "fieldname": "booking_count", "fieldtype": "Int", "width": 90
+	},
+		{"label": _("Estimated Amount"), "fieldname": "estimated_amount", "fieldtype": "Currency", "width": 140
+	},
 	]

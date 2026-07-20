@@ -27,8 +27,8 @@ def ensure_iso_controls() -> int:
 				"control_id": control_id,
 				"control_title": title,
 				"iso_domain": domain,
-				"implementation_status": "Implemented",
-			}
+				"implementation_status": "Implemented"
+	}
 		).insert(ignore_permissions=True)
 		created += 1
 	return created
@@ -38,5 +38,7 @@ def ensure_iso_controls() -> int:
 def get_iso27001_status() -> dict:
 	ensure_iso_controls()
 	total = frappe.db.count("Rental ISO Control")
-	verified = frappe.db.count("Rental ISO Control", {"implementation_status": "Verified"})
-	return {"controls_total": total, "verified": verified, "framework": "ISO 27001:2022", "ready": total >= 4}
+	verified = frappe.db.count("Rental ISO Control", {"implementation_status": "Verified"
+	})
+	return {"controls_total": total, "verified": verified, "framework": "ISO 27001:2022", "ready": total >= 4
+	}

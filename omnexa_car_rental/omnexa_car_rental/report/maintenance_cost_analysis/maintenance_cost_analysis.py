@@ -44,10 +44,15 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180},
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Maintenance Type"), "fieldname": "maintenance_type", "fieldtype": "Data", "width": 150},
-		{"label": _("Records"), "fieldname": "records_count", "fieldtype": "Int", "width": 90},
-		{"label": _("Total Cost"), "fieldname": "total_cost", "fieldtype": "Currency", "width": 140},
+		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180
+	},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Maintenance Type"), "fieldname": "maintenance_type", "fieldtype": "Data", "width": 150
+	},
+		{"label": _("Records"), "fieldname": "records_count", "fieldtype": "Int", "width": 90
+	},
+		{"label": _("Total Cost"), "fieldname": "total_cost", "fieldtype": "Currency", "width": 140
+	},
 	]
 

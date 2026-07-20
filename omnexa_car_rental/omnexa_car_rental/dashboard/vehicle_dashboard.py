@@ -11,8 +11,7 @@ def get_vehicle_dashboard_data(data=None):
 	data["transactions"].append(
 		{
 			"label": _("Car Rental"),
-			"items": ["Rental Contract", "Rental Booking"],
-		}
+			"items": ["Rental Contract", "Rental Booking"]}
 	)
 	data["transactions"].append(
 		{
@@ -22,13 +21,12 @@ def get_vehicle_dashboard_data(data=None):
 				"Vehicle Fuel Log",
 				"Vehicle Damage Report",
 				"Vehicle Insurance Policy",
-			],
-		}
+			]}
 	)
 	data["transactions"].append(
 		{
 			"label": _("Toll & Highways"),
-			"items": ["Toll Transaction"],
-		}
+			"items": ["Toll Transaction"]
+	}
 	)
 	return data

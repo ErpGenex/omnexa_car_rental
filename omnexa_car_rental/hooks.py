@@ -16,7 +16,7 @@ add_to_apps_screen = [
 		"name": "omnexa_car_rental",
 		"logo": "/assets/omnexa_car_rental/logo.png",
 		"title": "Car Rental",
-		"route": "/app/car-rental",
+		"route": "/app/car-rental"
 	}
 ]
 
@@ -135,8 +135,8 @@ permission_query_conditions = {
 	"Rental Rate Plan": "omnexa_car_rental.permissions.rental_rate_plan_query_conditions",
 	"Rental Station": "omnexa_car_rental.permissions.rental_station_query_conditions",
 	"Rental Vehicle Inspection": "omnexa_car_rental.permissions.rental_vehicle_inspection_query_conditions",
-	"Maintenance Work Order": "omnexa_car_rental.permissions.maintenance_work_order_query_conditions",
-}
+	"Maintenance Work Order": "omnexa_car_rental.permissions.maintenance_work_order_query_conditions"
+	}
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
@@ -151,8 +151,8 @@ permission_query_conditions = {
 # }
 
 override_doctype_dashboards = {
-	"Vehicle": "omnexa_car_rental.omnexa_car_rental.dashboard.vehicle_dashboard.get_vehicle_dashboard_data",
-}
+	"Vehicle": "omnexa_car_rental.omnexa_car_rental.dashboard.vehicle_dashboard.get_vehicle_dashboard_data"
+	}
 
 # Document Events
 # ---------------
@@ -161,69 +161,68 @@ override_doctype_dashboards = {
 doc_events = {
 	"Vehicle": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Booking": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Contract": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Driver": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Supplier Fleet Contract": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Vehicle Maintenance Record": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Vehicle Fuel Log": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Vehicle Damage Report": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Vehicle Insurance Policy": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Toll Transaction": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Toll Allocation Rule": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Toll Invoice Line": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Rate Plan": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Station": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Rental Vehicle Inspection": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"
 	},
 	"Maintenance Work Order": {
 		"before_validate": "omnexa_car_rental.permissions.populate_company_branch_from_user_context",
-		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc",
-	},
-}
+		"validate": "omnexa_car_rental.permissions.enforce_branch_access_for_doc"}
+	}
 
 # Scheduled Tasks
 # ---------------
@@ -236,13 +235,11 @@ scheduler_events = {
 		],
 		"5 4 1 * *": [
 			"omnexa_car_rental.toll_tasks.run_scheduled_monthly_toll_billing",
-		],
-	},
+		]},
 	"daily": [
 		"omnexa_car_rental.fleet_reminders.run_daily",
 		"omnexa_car_rental.policy_renewal_tasks.run_policy_renewal_reminders",
-	],
-}
+	]}
 
 # Testing
 # -------
@@ -287,22 +284,22 @@ scheduler_events = {
 
 # user_data_fields = [
 # 	{
-# 		"doctype": "{doctype_1}",
-# 		"filter_by": "{filter_by}",
-# 		"redact_fields": ["{field_1}", "{field_2}"],
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
+# 		"redact_fields": ["{}", "{}"],
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_2}",
-# 		"filter_by": "{filter_by}",
+# 		"doctype": "{}",
+# 		"filter_by": "{}",
 # 		"partial": 1,
 # 	},
 # 	{
-# 		"doctype": "{doctype_3}",
+# 		"doctype": "{}",
 # 		"strict": False,
 # 	},
 # 	{
-# 		"doctype": "{doctype_4}"
+# 		"doctype": "{}"
 # 	}
 # ]
 

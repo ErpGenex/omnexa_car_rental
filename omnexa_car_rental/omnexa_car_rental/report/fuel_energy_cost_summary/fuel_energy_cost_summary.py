@@ -65,13 +65,22 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Allocation"), "fieldname": "allocation_mode", "fieldtype": "Data", "width": 150},
-		{"label": _("Period (YYYY-MM)"), "fieldname": "period", "fieldtype": "Data", "width": 120},
-		{"label": _("Logs"), "fieldname": "log_count", "fieldtype": "Int", "width": 70},
-		{"label": _("Fuel Liters"), "fieldname": "fuel_liters", "fieldtype": "Float", "width": 110},
-		{"label": _("Fuel Cost"), "fieldname": "fuel_cost", "fieldtype": "Currency", "width": 120},
-		{"label": _("KM Driven"), "fieldname": "km_driven", "fieldtype": "Float", "width": 100},
-		{"label": _("Cost / KM"), "fieldname": "cost_per_km", "fieldtype": "Float", "width": 100},
-		{"label": _("L / 100 KM"), "fieldname": "liters_per_100km", "fieldtype": "Float", "width": 100},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Allocation"), "fieldname": "allocation_mode", "fieldtype": "Data", "width": 150
+	},
+		{"label": _("Period (YYYY-MM)"), "fieldname": "period", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Logs"), "fieldname": "log_count", "fieldtype": "Int", "width": 70
+	},
+		{"label": _("Fuel Liters"), "fieldname": "fuel_liters", "fieldtype": "Float", "width": 110
+	},
+		{"label": _("Fuel Cost"), "fieldname": "fuel_cost", "fieldtype": "Currency", "width": 120
+	},
+		{"label": _("KM Driven"), "fieldname": "km_driven", "fieldtype": "Float", "width": 100
+	},
+		{"label": _("Cost / KM"), "fieldname": "cost_per_km", "fieldtype": "Float", "width": 100
+	},
+		{"label": _("L / 100 KM"), "fieldname": "liters_per_100km", "fieldtype": "Float", "width": 100
+	},
 	]

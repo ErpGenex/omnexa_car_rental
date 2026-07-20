@@ -34,8 +34,8 @@ def ensure_fleet_roles():
 			{
 				"doctype": "Role",
 				"role_name": role_name,
-				"desk_access": 1,
-			}
+				"desk_access": 1
+	}
 		)
 		doc.insert(ignore_permissions=True)
 

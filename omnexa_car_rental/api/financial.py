@@ -21,17 +21,20 @@ def recognize_revenue(rental_contract: str, amount: float, phase: str = "Perform
 			"recognition_date": today(),
 			"recognized_amount": flt(amount),
 			"ifrs15_phase": phase,
-			"status": "Posted",
-		}
+			"status": "Posted"
+	}
 	)
 	doc.insert()
-	return {"recognition": doc.name}
+	return {"recognition": doc.name
+	}
 
 
 @frappe.whitelist()
 def apply_fx_rate(amount: float, from_currency: str, to_currency: str) -> dict:
-	rate = flt(frappe.db.get_value("Currency Exchange", {"from_currency": from_currency, "to_currency": to_currency}, "exchange_rate") or 1)
-	return {"from_currency": from_currency, "to_currency": to_currency, "rate": rate, "converted": flt(amount) * rate}
+	rate = flt(frappe.db.get_value("Currency Exchange", {"from_currency": from_currency, "to_currency": to_currency
+	}, "exchange_rate") or 1)
+	return {"from_currency": from_currency, "to_currency": to_currency, "rate": rate, "converted": flt(amount) * rate
+	}
 
 
 @frappe.whitelist()
@@ -42,5 +45,5 @@ def post_fleet_depreciation(vehicle: str, amount: float) -> dict:
 		"company": v.company,
 		"depreciation_amount": flt(amount),
 		"integration": "omnexa_fixed_assets",
-		"status": "Queued",
+		"status": "Queued"
 	}

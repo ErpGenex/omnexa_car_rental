@@ -35,18 +35,28 @@ def get_site_config() -> dict:
 		"accent_color": "#00bcd4",
 		"gold_color": "#ffc107",
 		"fleet": [
-			{"key": "economy", "name_ar": "اقتصادية", "name_en": "Economy", "icon": "🚗", "price": "from $25/day"},
-			{"key": "sedan", "name_ar": "سيدان", "name_en": "Sedan", "icon": "🚙", "price": "from $35/day"},
-			{"key": "suv", "name_ar": "دفع رباعي", "name_en": "SUV", "icon": "🚙", "price": "from $50/day"},
-			{"key": "luxury", "name_ar": "فاخرة", "name_en": "Luxury", "icon": "🏎️", "price": "from $80/day"},
+			{"key": "economy", "name_ar": "اقتصادية", "name_en": "Economy", "icon": "🚗", "price": "from $25/day"
+	},
+			{"key": "sedan", "name_ar": "سيدان", "name_en": "Sedan", "icon": "🚙", "price": "from $35/day"
+	},
+			{"key": "suv", "name_ar": "دفع رباعي", "name_en": "SUV", "icon": "🚙", "price": "from $50/day"
+	},
+			{"key": "luxury", "name_ar": "فاخرة", "name_en": "Luxury", "icon": "🏎️", "price": "from $80/day"
+	},
 		],
 		"services": [
-			{"icon": "🔑", "ar": "تأجير مرن", "en": "Flexible Rental"},
-			{"icon": "📱", "ar": "حجز أونلاين", "en": "Online Booking"},
-			{"icon": "🛡️", "ar": "تأمين شامل", "en": "Full Insurance"},
-			{"icon": "🚗", "ar": "توصيل للمنزل", "en": "Home Delivery"},
-			{"icon": "🔧", "ar": "صيانة مجانية", "en": "Free Maintenance"},
-			{"icon": "📍", "ar": "خدمة 24/7", "en": "24/7 Support"},
+			{"icon": "🔑", "ar": "تأجير مرن", "en": "Flexible Rental"
+	},
+			{"icon": "📱", "ar": "حجز أونلاين", "en": "Online Booking"
+	},
+			{"icon": "🛡️", "ar": "تأمين شامل", "en": "Full Insurance"
+	},
+			{"icon": "🚗", "ar": "توصيل للمنزل", "en": "Home Delivery"
+	},
+			{"icon": "🔧", "ar": "صيانة مجانية", "en": "Free Maintenance"
+	},
+			{"icon": "📍", "ar": "خدمة 24/7", "en": "24/7 Support"
+	},
 		],
-		"stats": {"cars": 200, "customers": 5000, "locations": 10, "years": 8},
+		"stats": {"cars": 200, "customers": 5000, "locations": 10, "years": 8}
 	}

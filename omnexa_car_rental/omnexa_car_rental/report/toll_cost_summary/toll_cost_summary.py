@@ -17,7 +17,8 @@ def execute(filters=None):
 		frappe.throw(_("Company is required (set filter or user default)."), title=_("Filters"))
 
 	conditions = ["tt.company = %(company)s", "tt.status != 'Duplicate Ignored'"]
-	values: dict = {"company": filters.company}
+	values: dict = {"company": filters.company
+	}
 
 	if filters.get("branch"):
 		conditions.append("tt.branch = %(branch)s")
@@ -63,10 +64,16 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 160},
-		{"label": _("Customer"), "fieldname": "customer", "fieldtype": "Link", "options": "Customer", "width": 160},
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 120},
-		{"label": _("Toll Provider"), "fieldname": "provider", "fieldtype": "Link", "options": "Toll Provider", "width": 140},
-		{"label": _("Crossings"), "fieldname": "toll_count", "fieldtype": "Int", "width": 100},
-		{"label": _("Total Amount"), "fieldname": "total_amount", "fieldtype": "Currency", "width": 140},
+		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 160
+	},
+		{"label": _("Customer"), "fieldname": "customer", "fieldtype": "Link", "options": "Customer", "width": 160
+	},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 120
+	},
+		{"label": _("Toll Provider"), "fieldname": "provider", "fieldtype": "Link", "options": "Toll Provider", "width": 140
+	},
+		{"label": _("Crossings"), "fieldname": "toll_count", "fieldtype": "Int", "width": 100
+	},
+		{"label": _("Total Amount"), "fieldname": "total_amount", "fieldtype": "Currency", "width": 140
+	},
 	]

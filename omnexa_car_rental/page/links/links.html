@@ -1,0 +1,99 @@
+{% extends "templates/base.html" %}
+
+{% block title %}روابط تأجير السيارات | Car Rental Links{% endblock %}
+
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center mb-4">روابط تأجير السيارات | Car Rental Links</h1>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">🌐 موقع تأجير السيارات العام | Public Website</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">الموقع العام لتأجير السيارات - متاح للجميع</p>
+                    <a href="/car_rental/" target="_blank" class="btn btn-primary btn-lg">
+                        <i class="fa fa-external-link"></i> زيارة الموقع | Visit Website
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">👤 بوابة العميل | Customer Portal</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">بوابة خاصة للعملاء لحجز السيارات</p>
+                    <a href="/app/car-rental-customer-portal/" target="_blank" class="btn btn-success btn-lg">
+                        <i class="fa fa-user"></i> دخول البوابة | Access Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-warning text-white">
+                    <h4 class="mb-0">🔧 بوابة الورشة | Workshop Vendor Portal</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">بوابة خاصة لموردي الورشة للصيانة</p>
+                    <a href="/app/car-rental-workshop-vendor-portal/" target="_blank" class="btn btn-warning btn-lg">
+                        <i class="fa fa-wrench"></i> دخول البوابة | Access Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">🚗 بوابة السائق | Driver Portal</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">بوابة خاصة للسائقين</p>
+                    <a href="/app/car-rental-driver-portal/" target="_blank" class="btn btn-info btn-lg">
+                        <i class="fa fa-car"></i> دخول البوابة | Access Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0">📋 معلومات إضافية | Additional Information</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <strong>رابط الموقع:</strong> <code>{{ frappe.request.host_url }}car_rental/</code>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>بوابة العميل:</strong> <code>{{ frappe.request.host_url }}app/car-rental-customer-portal/</code>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>بوابة الورشة:</strong> <code>{{ frappe.request.host_url }}app/car-rental-workshop-vendor-portal/</code>
+                        </li>
+                        <li class="list-group-item">
+                            <strong>بوابة السائق:</strong> <code>{{ frappe.request.host_url }}app/car-rental-driver-portal/</code>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

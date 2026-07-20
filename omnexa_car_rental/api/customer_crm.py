@@ -14,16 +14,19 @@ from frappe.utils import flt
 def get_wallet_balance(customer_profile: str) -> dict:
 	wallet = frappe.db.get_value(
 		"Rental Customer Wallet",
-		{"customer_profile": customer_profile, "status": "Active"},
+		{"customer_profile": customer_profile, "status": "Active"
+	},
 		["name", "balance", "currency"],
 		as_dict=True,
 	)
-	return wallet or {"balance": 0, "currency": frappe.defaults.get_global_default("currency")}
+	return wallet or {"balance": 0, "currency": frappe.defaults.get_global_default("currency")
+	}
 
 
 @frappe.whitelist()
 def top_up_wallet(customer_profile: str, amount: float, company: str, branch: str) -> dict:
-	wallet_name = frappe.db.get_value("Rental Customer Wallet", {"customer_profile": customer_profile, "status": "Active"})
+	wallet_name = frappe.db.get_value("Rental Customer Wallet", {"customer_profile": customer_profile, "status": "Active"
+	})
 	if wallet_name:
 		w = frappe.get_doc("Rental Customer Wallet", wallet_name)
 		w.balance = flt(w.balance) + flt(amount)
@@ -36,18 +39,22 @@ def top_up_wallet(customer_profile: str, amount: float, company: str, branch: st
 				"company": company,
 				"branch": branch,
 				"balance": flt(amount),
-				"status": "Active",
-			}
+				"status": "Active"
+	}
 		)
 		w.insert()
-	return {"wallet": w.name, "balance": w.balance}
+	return {"wallet": w.name, "balance": w.balance
+	}
 
 
 @frappe.whitelist()
 def check_customer_risk(customer_profile: str) -> dict:
-	blacklisted = frappe.db.exists("Rental Customer Blacklist", {"customer_profile": customer_profile, "status": "Active"})
-	score = frappe.db.get_value("Rental Customer Blacklist", {"customer_profile": customer_profile, "status": "Active"}, "risk_score") or 10
-	return {"blacklisted": bool(blacklisted), "risk_score": int(score), "allowed": not bool(blacklisted)}
+	blacklisted = frappe.db.exists("Rental Customer Blacklist", {"customer_profile": customer_profile, "status": "Active"
+	})
+	score = frappe.db.get_value("Rental Customer Blacklist", {"customer_profile": customer_profile, "status": "Active"
+	}, "risk_score") or 10
+	return {"blacklisted": bool(blacklisted), "risk_score": int(score), "allowed": not bool(blacklisted)
+	}
 
 
 @frappe.whitelist()
@@ -60,11 +67,12 @@ def launch_crm_campaign(campaign_name: str, segment: str, channel: str, company:
 			"channel": channel,
 			"company": company,
 			"branch": branch,
-			"status": "Scheduled",
-		}
+			"status": "Scheduled"
+	}
 	)
 	doc.insert()
-	return {"campaign": doc.name}
+	return {"campaign": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -73,4 +81,5 @@ def enforce_credit_limit(corporate_account: str, amount: float) -> dict:
 	limit = flt(corp.get("credit_limit") or 0)
 	if limit and flt(amount) > limit:
 		frappe.throw(_("Credit limit exceeded."), title=_("Credit Limit"))
-	return {"allowed": True, "credit_limit": limit}
+	return {"allowed": True, "credit_limit": limit
+	}

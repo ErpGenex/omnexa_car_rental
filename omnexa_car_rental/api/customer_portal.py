@@ -18,8 +18,7 @@ def get_portal_config(company: str | None = None) -> dict:
 		"quote_api": "omnexa_car_rental.api.web_booking.quote_rental_rate",
 		"availability_api": "omnexa_car_rental.api.web_booking.get_available_vehicles",
 		"company": company or frappe.defaults.get_global_default("company"),
-		"features": ["booking", "payment", "extension", "support"],
-	}
+		"features": ["booking", "payment", "extension", "support"]}
 
 
 @frappe.whitelist(allow_guest=True)
@@ -27,4 +26,6 @@ def request_rental_extension(contract: str, new_end_datetime: str) -> dict:
 	doc = frappe.get_doc("Rental Contract", contract)
 	doc.contract_end = new_end_datetime
 	doc.save(ignore_permissions=True)
-	return {"contract": doc.name, "message": _("Extension request recorded.")}
+	return {"contract": doc.name
+, "message": _("Extension request recorded.")
+	}

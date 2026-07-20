@@ -30,7 +30,8 @@ def cint_sandbox(provider) -> bool:
 
 
 def build_auth_headers(provider) -> dict[str, str]:
-	headers = {"Accept": "application/json", "Content-Type": "application/json"}
+	headers = {"Accept": "application/json", "Content-Type": "application/json"
+	}
 	if provider.auth_token:
 		token = provider.get_password("auth_token")
 		header_name = (provider.auth_header_name or "Authorization").strip()
@@ -55,8 +56,8 @@ def refresh_oauth_token_if_needed(provider) -> None:
 		data={
 			"grant_type": "client_credentials",
 			"client_id": provider.client_id,
-			"client_secret": secret,
-		},
+			"client_secret": secret
+	},
 		timeout=30,
 	)
 	if resp.status_code >= 400:

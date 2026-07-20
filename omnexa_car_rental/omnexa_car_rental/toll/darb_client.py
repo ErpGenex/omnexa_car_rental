@@ -29,7 +29,8 @@ class DarbClient:
 		if cint_sandbox(self.provider):
 			return self._sandbox_transactions(cursor)
 		path = getattr(self.provider, "api_transactions_path", None) or DEFAULT_TX_PATH
-		params: dict[str, Any] = {"page_size": 200}
+		params: dict[str, Any] = {"page_size": 200
+	}
 		if cursor:
 			params["since"] = cursor
 		payload = http_get_json(self.provider, path, params)
@@ -39,11 +40,14 @@ class DarbClient:
 
 	def test_connection(self) -> dict:
 		if cint_sandbox(self.provider):
-			return {"ok": True, "mode": "sandbox", "provider": "DARB", "message": "Sandbox ready"}
+			return {"ok": True, "mode": "sandbox", "provider": "DARB", "message": "Sandbox ready"
+	}
 		path = getattr(self.provider, "api_transactions_path", None) or DEFAULT_TX_PATH
-		payload = http_get_json(self.provider, path, {"page_size": 1})
+		payload = http_get_json(self.provider, path, {"page_size": 1
+	})
 		count = len(extract_transaction_list(payload))
-		return {"ok": True, "mode": "live", "provider": "DARB", "sample_count": count}
+		return {"ok": True, "mode": "live", "provider": "DARB", "sample_count": count
+	}
 
 	def _sandbox_transactions(self, cursor: str | None) -> tuple[list[dict], str | None]:
 		base = get_datetime(now_datetime()) - timedelta(minutes=45)
@@ -53,15 +57,18 @@ class DarbClient:
 		idx = offset + 1
 		rows = [
 			{
-				"trans_id": f"DARB-SBX-{idx:04d}",
+				"trans_id": f"DARB-SBX-{idx:04d
+	}",
 				"passage_time": (base + timedelta(minutes=idx * 7)).isoformat(),
 				"toll_fee": 4.0,
 				"currency": "AED",
-				"licensePlate": f"AUH-{2000 + idx}",
-				"obu_id": f"TAG-DARB-{idx:03d}",
+				"licensePlate": f"AUH-{2000 + idx
+	}",
+				"obu_id": f"TAG-DARB-{idx:03d
+	}",
 				"checkpoint": "Sheikh Zayed Bridge",
-				"checkpoint_code": f"DARB-G{idx}",
-			}
+				"checkpoint_code": f"DARB-G{idx}"
+	}
 		]
 		return rows, str(idx)
 
@@ -90,5 +97,5 @@ def default_darb_config() -> dict:
 		"auth_header_name": "Authorization",
 		"sandbox_mode": 1,
 		"is_active": 1,
-		"notes": "DARB fleet API. Set auth_token or oauth_token_url+client_id for live ITC access.",
+		"notes": "DARB fleet API. Set auth_token or oauth_token_url+client_id for live ITC access."
 	}

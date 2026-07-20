@@ -24,7 +24,8 @@ def test_darb_connection() -> dict:
 @frappe.whitelist()
 def sync_toll_provider(provider_code: str, force: int = 1) -> dict:
 	code = (provider_code or "").strip().upper()
-	name = frappe.db.get_value("Toll Provider", {"provider_code": code}, "name")
+	name = frappe.db.get_value("Toll Provider", {"provider_code": code
+	}, "name")
 	if not name:
 		frappe.throw(_("Toll Provider not found: {0}").format(code))
 	return poll_provider(name, force=bool(int(force)))
@@ -33,7 +34,8 @@ def sync_toll_provider(provider_code: str, force: int = 1) -> dict:
 @frappe.whitelist()
 def sync_all_toll_providers(force: int = 1) -> dict:
 	results = poll_all_active(force=bool(int(force)))
-	return {"ok": True, "results": results}
+	return {"ok": True, "results": results
+	}
 
 
 @frappe.whitelist()
@@ -56,5 +58,5 @@ def get_toll_integration_status() -> dict:
 	return {
 		"webhook_url": "/api/method/omnexa_car_rental.toll_webhook.ingest",
 		"providers": providers,
-		"scheduler": "poll_toll_providers every 15 min",
+		"scheduler": "poll_toll_providers every 15 min"
 	}

@@ -27,7 +27,8 @@ def overlapping_submitted_contracts(
 		return []
 	rows = frappe.get_all(
 		"Rental Contract",
-		filters={"vehicle": vehicle, "docstatus": 1, "status": "Active Rental"},
+		filters={"vehicle": vehicle, "docstatus": 1, "status": "Active Rental"
+	},
 		fields=["name", "contract_start", "contract_end"],
 	)
 	out = []
@@ -50,7 +51,8 @@ def overlapping_confirmed_bookings(
 		return []
 	rows = frappe.get_all(
 		"Rental Booking",
-		filters={"vehicle": vehicle, "booking_status": "Confirmed"},
+		filters={"vehicle": vehicle, "booking_status": "Confirmed"
+	},
 		fields=["name", "start_datetime", "end_datetime"],
 	)
 	out = []
@@ -80,7 +82,8 @@ def vehicle_has_overlap(
 
 def vehicle_has_other_active_rental(vehicle: str, exclude_contract: str | None = None) -> bool:
 	"""Another submitted contract still in Active Rental for this vehicle."""
-	filters: dict = {"vehicle": vehicle, "docstatus": 1, "status": "Active Rental"}
+	filters: dict = {"vehicle": vehicle, "docstatus": 1, "status": "Active Rental"
+	}
 	rows = frappe.get_all("Rental Contract", filters=filters, pluck="name", limit=20)
 	for name in rows:
 		if exclude_contract and name == exclude_contract:

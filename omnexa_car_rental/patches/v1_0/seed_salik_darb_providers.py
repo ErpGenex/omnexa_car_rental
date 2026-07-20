@@ -10,9 +10,11 @@ from omnexa_car_rental.omnexa_car_rental.toll.salik_client import default_salik_
 def execute():
 	for cfg in (default_salik_config(), default_darb_config()):
 		code = cfg["provider_code"]
-		if frappe.db.exists("Toll Provider", {"provider_code": code}):
+		if frappe.db.exists("Toll Provider", {"provider_code": code
+	}):
 			# Ensure polling + sandbox defaults on existing rows
-			name = frappe.db.get_value("Toll Provider", {"provider_code": code}, "name")
+			name = frappe.db.get_value("Toll Provider", {"provider_code": code
+	}, "name")
 			doc = frappe.get_doc("Toll Provider", name)
 			updated = False
 			for key in (

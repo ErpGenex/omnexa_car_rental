@@ -59,10 +59,16 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120},
-		{"label": _("Rental Mode"), "fieldname": "rental_mode", "fieldtype": "Data", "width": 120},
-		{"label": _("Contracts"), "fieldname": "contract_count", "fieldtype": "Int", "width": 90},
-		{"label": _("Total Amount"), "fieldname": "total_amount", "fieldtype": "Currency", "width": 130},
-		{"label": _("Deposits"), "fieldname": "deposit_amount", "fieldtype": "Currency", "width": 120},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Rental Mode"), "fieldname": "rental_mode", "fieldtype": "Data", "width": 120
+	},
+		{"label": _("Contracts"), "fieldname": "contract_count", "fieldtype": "Int", "width": 90
+	},
+		{"label": _("Total Amount"), "fieldname": "total_amount", "fieldtype": "Currency", "width": 130
+	},
+		{"label": _("Deposits"), "fieldname": "deposit_amount", "fieldtype": "Currency", "width": 120
+	},
 	]

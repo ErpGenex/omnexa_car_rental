@@ -27,11 +27,14 @@ def get_client(provider):
 def poll_provider(provider_name: str, *, force: bool = False) -> dict:
 	provider = frappe.get_doc("Toll Provider", provider_name)
 	if not provider.is_active:
-		return {"ok": False, "skipped": True, "reason": "inactive"}
+		return {"ok": False, "skipped": True, "reason": "inactive"
+	}
 	if provider.integration_type != "API Polling":
-		return {"ok": False, "skipped": True, "reason": "not polling"}
+		return {"ok": False, "skipped": True, "reason": "not polling"
+	}
 	if not force and not should_poll_provider(provider):
-		return {"ok": True, "skipped": True, "reason": "interval"}
+		return {"ok": True, "skipped": True, "reason": "interval"
+	}
 
 	client = get_client(provider)
 	cursor = provider.last_sync_token or ""
@@ -39,13 +42,15 @@ def poll_provider(provider_name: str, *, force: bool = False) -> dict:
 		rows, next_cursor = client.fetch_since(cursor or None)
 	except TollAPIError as exc:
 		frappe.log_error(title=f"Toll poll failed: {provider.provider_code}", message=str(exc))
-		return {"ok": False, "error": str(exc)}
+		return {"ok": False, "error": str(exc)
+	}
 
 	ingested = 0
 	duplicates = 0
 	errors: list[str] = []
 	company = frappe.defaults.get_global_default("company") or (frappe.get_all("Company", limit=1)[0].name if frappe.get_all("Company", limit=1) else None)
-	branch = frappe.db.get_value("Branch", {"company": company}, "name") if company else None
+	branch = frappe.db.get_value("Branch", {"company": company
+	}, "name") if company else None
 	for row in rows:
 		if company and not row.get("company"):
 			row["company"] = company
@@ -73,7 +78,7 @@ def poll_provider(provider_name: str, *, force: bool = False) -> dict:
 		"ingested": ingested,
 		"duplicates": duplicates,
 		"errors": errors[:5],
-		"next_cursor": next_cursor,
+		"next_cursor": next_cursor
 	}
 
 
@@ -81,7 +86,8 @@ def poll_all_active(*, force: bool = False) -> list[dict]:
 	results = []
 	for name in frappe.get_all(
 		"Toll Provider",
-		filters={"integration_type": "API Polling", "is_active": 1},
+		filters={"integration_type": "API Polling", "is_active": 1
+	},
 		pluck="name",
 	):
 		code = frappe.db.get_value("Toll Provider", name, "provider_code")
@@ -92,7 +98,8 @@ def poll_all_active(*, force: bool = False) -> list[dict]:
 
 
 def test_provider_connection(provider_code: str) -> dict:
-	name = frappe.db.get_value("Toll Provider", {"provider_code": provider_code.strip().upper()}, "name")
+	name = frappe.db.get_value("Toll Provider", {"provider_code": provider_code.strip().upper()
+	}, "name")
 	if not name:
 		frappe.throw(_("Toll Provider not found: {0}").format(provider_code))
 	provider = frappe.get_doc("Toll Provider", name)

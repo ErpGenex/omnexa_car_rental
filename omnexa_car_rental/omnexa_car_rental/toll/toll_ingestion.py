@@ -20,7 +20,8 @@ from omnexa_car_rental.omnexa_car_rental.toll.toll_util import verify_webhook_si
 
 
 def _provider_doc(provider_code: str) -> frappe.model.document.Document:
-	name = frappe.db.get_value("Toll Provider", {"provider_code": provider_code.strip().upper()}, "name")
+	name = frappe.db.get_value("Toll Provider", {"provider_code": provider_code.strip().upper()
+	}, "name")
 	if not name:
 		frappe.throw(frappe._("Unknown Toll Provider: {0}").format(provider_code))
 	doc = frappe.get_doc("Toll Provider", name)
@@ -66,7 +67,7 @@ def _map_payload_to_row(data: dict, provider_name: str) -> dict[str, Any]:
 		"branch": data.get("branch"),
 		"project": data.get("project"),
 		"raw_payload": json.dumps(data, default=str),
-		"status": "Received",
+		"status": "Received"
 	}
 	return row
 
@@ -97,7 +98,8 @@ def ingest_payload(
 		results = []
 		for row in data:
 			results.append(ingest_dict(prov, row, auto_match=auto_match, auto_bill=auto_bill))
-		return {"ok": True, "batch": True, "results": results}
+		return {"ok": True, "batch": True, "results": results
+	}
 
 	return ingest_dict(prov, data, auto_match=auto_match, auto_bill=auto_bill)
 
@@ -137,9 +139,11 @@ def ingest_dict(
 
 	if frappe.db.exists(
 		"Toll Transaction",
-		{"transaction_id": row["transaction_id"], "provider": prov.name},
+		{"transaction_id": row["transaction_id"], "provider": prov.name
+	},
 	):
-		return {"ok": True, "duplicate": True, "transaction_id": row["transaction_id"]}
+		return {"ok": True, "duplicate": True, "transaction_id": row["transaction_id"]
+	}
 
 	doc = frappe.get_doc({"doctype": "Toll Transaction", **row})
 	doc.insert(ignore_permissions=True)
@@ -160,7 +164,8 @@ def ingest_dict(
 			doc.duplicate_of = dup
 			doc.save(ignore_permissions=True)
 			frappe.db.commit()
-			return {"ok": True, "name": doc.name, "status": doc.status, "duplicate_of": dup}
+			return {"ok": True, "name": doc.name, "status": doc.status, "duplicate_of": dup
+	}
 
 	apply_fx_to_company_currency(doc.name)
 
@@ -170,7 +175,8 @@ def ingest_dict(
 		if auto_bill and doc.status == "Rule Applied":
 			create_recharge_sales_invoice(doc.name)
 
-	return {"ok": True, "name": doc.name, "status": doc.status}
+	return {"ok": True, "name": doc.name, "status": doc.status
+	}
 
 
 def ingest_batch_file(file_name: str, provider_code: str) -> dict[str, Any]:
@@ -181,7 +187,8 @@ def ingest_batch_file(file_name: str, provider_code: str) -> dict[str, Any]:
 	with open(path, encoding="utf-8") as fh:
 		text = fh.read().strip()
 	if not text:
-		return {"ok": False, "error": "empty file"}
+		return {"ok": False, "error": "empty file"
+	}
 
 	if text.startswith("["):
 		rows = json.loads(text)
@@ -193,4 +200,5 @@ def ingest_batch_file(file_name: str, provider_code: str) -> dict[str, Any]:
 		if not isinstance(data, dict):
 			continue
 		results.append(ingest_dict(prov, data, auto_match=True, auto_bill=False))
-	return {"ok": True, "count": len(results), "results": results}
+	return {"ok": True, "count": len(results), "results": results
+	}

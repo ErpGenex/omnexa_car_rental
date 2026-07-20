@@ -31,7 +31,8 @@ class SalikClient:
 		if cint_sandbox(self.provider):
 			return self._sandbox_transactions(cursor)
 		path = getattr(self.provider, "api_transactions_path", None) or DEFAULT_TX_PATH
-		params: dict[str, Any] = {"limit": 200}
+		params: dict[str, Any] = {"limit": 200
+	}
 		if cursor:
 			if cursor.isdigit() or "T" in cursor:
 				params["since"] = cursor
@@ -44,11 +45,14 @@ class SalikClient:
 
 	def test_connection(self) -> dict:
 		if cint_sandbox(self.provider):
-			return {"ok": True, "mode": "sandbox", "provider": "SALIK", "message": "Sandbox ready"}
+			return {"ok": True, "mode": "sandbox", "provider": "SALIK", "message": "Sandbox ready"
+	}
 		path = getattr(self.provider, "api_transactions_path", None) or DEFAULT_TX_PATH
-		payload = http_get_json(self.provider, path, {"limit": 1})
+		payload = http_get_json(self.provider, path, {"limit": 1
+	})
 		count = len(extract_transaction_list(payload))
-		return {"ok": True, "mode": "live", "provider": "SALIK", "sample_count": count}
+		return {"ok": True, "mode": "live", "provider": "SALIK", "sample_count": count
+	}
 
 	def _sandbox_transactions(self, cursor: str | None) -> tuple[list[dict], str | None]:
 		"""Deterministic demo feed when sandbox_mode is enabled."""
@@ -67,9 +71,9 @@ class SalikClient:
 				"plateNumber": f"DXB-{1000 + idx}",
 				"salikTagId": f"TAG-SALIK-{idx:03d}",
 				"gateName": "Al Barsha",
-				"gateCode": "SAL-G{idx}",
-				"countryCode": "AE",
-			}
+				"gateCode": f"SAL-G{idx}",
+				"countryCode": "AE"
+	}
 		]
 		return rows, str(idx)
 
@@ -98,5 +102,5 @@ def default_salik_config() -> dict:
 		"auth_header_name": "Authorization",
 		"sandbox_mode": 1,
 		"is_active": 1,
-		"notes": "Salik fleet API. Set auth_token or oauth_token_url+client_id for live RTA access.",
+		"notes": "Salik fleet API. Set auth_token or oauth_token_url+client_id for live RTA access."
 	}

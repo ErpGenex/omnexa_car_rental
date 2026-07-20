@@ -15,5 +15,5 @@ def export_soc2_evidence(period: str = "monthly") -> dict:
 		"trust_principles": ["Security", "Availability", "Confidentiality"],
 		"evidence_items": frappe.db.count("Rental ISO Control") + frappe.db.count("Version"),
 		"export_format": "zip",
-		"status": "Ready",
+		"status": "Ready"
 	}

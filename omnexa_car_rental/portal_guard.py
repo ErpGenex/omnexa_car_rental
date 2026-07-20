@@ -24,25 +24,23 @@ PORTAL_WORKSPACE_SPECS: dict[str, dict] = {
 		"name": "car-rental-ws-customer",
 		"title": "Car Rental Customer Hub",
 		"label": "Customer Portal",
-		"icon": "car-rental-customer",
+		"icon": "icon"
 	},
 	VENDOR_PORTAL_ROLE: {
 		"name": "car-rental-ws-vendor",
 		"title": "Car Rental Vendor Hub",
 		"label": "Vendor Portal",
-		"icon": "car-rental-vendor",
-	},
+		"icon": "icon"
+	}
 }
 
 CUSTOMER_ALLOWED_PAGES = frozenset(
-	{
-		"car-rental-customer-portal",
+	{"car-rental-customer-portal",
 	}
 )
 
 VENDOR_ALLOWED_PAGES = frozenset(
-	{
-		"car-rental-workshop-vendor-portal",
+	{"car-rental-workshop-vendor-portal",
 	}
 )
 
@@ -105,7 +103,7 @@ def extend_bootinfo(bootinfo):
 		"portal_role": role,
 		"home_route": PORTAL_HOME_ROUTES[role],
 		"allowed_pages": sorted(portal_allowed_pages(role)),
-		"allowed_doctypes": sorted(portal_allowed_doctypes(role)),
+		"allowed_doctypes": sorted(portal_allowed_doctypes(role))
 	}
 
 
@@ -113,7 +111,8 @@ def ensure_car_rental_workspace_portal_roles() -> dict:
 	"""Hide full Car Rental workspace from portal users; add minimal customer/vendor workspaces."""
 	from omnexa_car_rental.api.car_rental_role_demo import CAR_RENTAL_STAFF_ROLES
 
-	stats = {"car_rental_roles_set": 0, "customer_ws": False, "vendor_ws": False}
+	stats = {"car_rental_roles_set": 0, "customer_ws": False, "vendor_ws": False
+	}
 	staff_roles = [r for r in CAR_RENTAL_STAFF_ROLES if frappe.db.exists("Role", r)]
 
 	if frappe.db.exists("Workspace", "Car Rental"):
@@ -170,8 +169,8 @@ def _ensure_portal_workspace(role: str, links: list[tuple]) -> bool:
 				"module": "Omnexa Car Rental",
 				"icon": spec["icon"],
 				"public": 0,
-				"is_hidden": 0,
-			}
+			"is_hidden": 0
+	}
 		)
 	ws.set("roles", [])
 	ws.append("roles", {"role": role})
@@ -186,25 +185,25 @@ def _ensure_portal_workspace(role: str, links: list[tuple]) -> bool:
 				"label": link_label,
 				"hidden": 0,
 				"onboard": 0,
-				"is_query_report": 0,
-			},
+			"is_query_report": 0
+	},
 		)
 	shortcuts = []
-	content = [{"id": "hdr", "type": "header", "data": {"text": f"<b>{spec['label']}</b>", "col": 12}}]
+	content = [{"id": "hdr", "type": "header", "data": {"text": f"<b>{spec['label']}</b>", "col": 12}
+	}]
 	for idx, (_lt, link_to, link_label) in enumerate(links):
 		shortcuts.append(
 			{
 				"type": "DocType" if _lt == "DocType" else "Page",
 				"link_to": link_to,
 				"label": link_label,
-				"color": "Blue",
-			}
+				"color": "Blue"
+	}
 		)
 		content.append(
-			{
-				"id": f"sc{idx}",
+			{"id": f"sc{idx}",
 				"type": "shortcut",
-				"data": {"shortcut_name": link_label, "col": 4},
+				"data": {"shortcut_name": link_label, "col": 4}
 			}
 		)
 	ws.shortcuts = []

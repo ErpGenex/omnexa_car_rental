@@ -1,0 +1,14 @@
+{
+ "item_code": "Car Rental Links",
+ "item_name": "Car Rental Links",
+ "module": "Omnexa Car Rental",
+ "page_name": "links",
+ "route": "links",
+ "is_standard": 1,
+ "published": 1,
+ "roles": [
+  "System Manager",
+  "Car Rental Administrator",
+  "Car Rental Staff"
+ ]
+}

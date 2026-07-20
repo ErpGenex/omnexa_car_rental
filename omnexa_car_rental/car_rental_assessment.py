@@ -51,11 +51,13 @@ def _top_500_improvements() -> list[dict]:
 				break
 			items.append(
 				{
-					"id": f"IMP-{n:04d}",
+					"id": f"IMP-{n:04d
+	}",
 					"domain": domain,
-					"title": f"{theme} enhancement #{i}",
-					"priority": "P1" if n <= 50 else "P2" if n <= 200 else "P3",
-				}
+					"title": f"{theme} enhancement #{i
+	}",
+					"priority": "P1" if n <= 50 else "P2" if n <= 200 else "P3"
+	}
 			)
 	return items[:500]
 
@@ -67,27 +69,43 @@ def export_assessment_to_docs() -> dict:
 	gaps = get_gap_status()
 	wave1_closed = sum(1 for g in gaps["gaps"] if g.get("wave") == 1 and g.get("status") == "closed")
 	checklist = [
-		{"id": "L01", "item": "Global benchmark module", "status": "done"},
-		{"id": "L02", "item": f"Gap register ({gaps['gaps_closed']}/{gaps['gaps_total']} closed)", "status": "done"},
-		{"id": "L03", "item": f"Wave 1 complete ({wave1_closed}/24)", "status": "done"},
-		{"id": "L04", "item": "Guest web booking API", "status": "done"},
-		{"id": "L05", "item": f"Score >= {score['global_leader_target']} (global leader gate)", "status": "done" if score.get("global_leader_gate") else "pending"},
-		{"id": "L06", "item": "Executive dashboard page", "status": "done"},
-		{"id": "L07", "item": "Full workspace menu sync", "status": "done"},
-		{"id": "L08", "item": "Tests pass", "status": "done"},
-		{"id": "L09", "item": "Audit docs exported (AR + JSON)", "status": "done"},
-		{"id": "L10", "item": "Waves 2–4 global rental closure", "status": "done" if gaps["gaps_open"] == 0 else "in_progress"},
+		{"id": "L01", "item": "Global benchmark module", "status": "done"
+	},
+		{"id": "L02", "item": f"Gap register ({gaps['gaps_closed']}/{gaps['gaps_total']
+	} closed)", "status": "done"
+	},
+		{"id": "L03", "item": f"Wave 1 complete ({wave1_closed
+	}/24)", "status": "done"
+	},
+		{"id": "L04", "item": "Guest web booking API", "status": "done"
+	},
+		{"id": "L05", "item": f"Score >= {score['global_leader_target']
+	} (global leader gate)", "status": "done" if score.get("global_leader_gate") else "pending"
+	},
+		{"id": "L06", "item": "Executive dashboard page", "status": "done"
+	},
+		{"id": "L07", "item": "Full workspace menu sync", "status": "done"
+	},
+		{"id": "L08", "item": "Tests pass", "status": "done"
+	},
+		{"id": "L09", "item": "Audit docs exported (AR + JSON)", "status": "done"
+	},
+		{"id": "L10", "item": "Waves 2–4 global rental closure", "status": "done" if gaps["gaps_open"] == 0 else "in_progress"
+	},
 	]
 	snapshot = {
 		"audit_date": str(date.today()),
 		"site": frappe.local.site,
 		"score": score,
 		"gaps": gaps,
-		"checklist": checklist,
+		"checklist": checklist
 	}
 	_write_json(os.path.join(root, "CAR_RENTAL_GAP_REGISTER.json"), gaps)
-	_write_json(os.path.join(root, "CAR_RENTAL_LIVE_CHECKLIST.json"), {"audit_date": str(date.today()), "site": frappe.local.site, "checklist": checklist})
+	_write_json(os.path.join(root, "CAR_RENTAL_LIVE_CHECKLIST.json"), {"audit_date": str(date.today()), "site": frappe.local.site, "checklist": checklist
+	})
 	_write_json(os.path.join(root, "LIVE_AUDIT_SNAPSHOT.json"), snapshot)
-	_write_json(os.path.join(root, "TOP_500_IMPROVEMENTS.json"), {"count": 500, "items": _top_500_improvements()})
+	_write_json(os.path.join(root, "TOP_500_IMPROVEMENTS.json"), {"count": 500, "items": _top_500_improvements()
+	})
 	_write_json(os.path.join(root, "EXECUTIVE_SCORES.json"), score.get("executive_scores", {}))
-	return {"path": root, "weighted_score": score.get("weighted_score"), "gaps_open": gaps.get("gaps_open")}
+	return {"path": root, "weighted_score": score.get("weighted_score"), "gaps_open": gaps.get("gaps_open")
+	}

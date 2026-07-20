@@ -28,8 +28,8 @@ def _open_todo_exists(reference_doctype: str, reference_name: str) -> bool:
 			{
 				"reference_type": reference_doctype,
 				"reference_name": reference_name,
-				"status": "Open",
-			},
+				"status": "Open"
+	},
 		)
 	)
 
@@ -54,8 +54,8 @@ def remind_insurance_expiry():
 				"reference_type": "Vehicle Insurance Policy",
 				"reference_name": row.name,
 				"allocated_to": assignee,
-				"priority": "Medium",
-			}
+				"priority": "Medium"
+	}
 		).insert(ignore_permissions=True)
 
 
@@ -67,8 +67,7 @@ def remind_driver_license_expiry():
 		"Rental Driver",
 		filters={
 			"status": "Active",
-			"license_expiry_date": ["between", [td, lim]],
-		},
+			"license_expiry_date": ["between", [td, lim]]},
 		fields=["name", "driver_name", "license_expiry_date", "license_number"],
 	):
 		if _open_todo_exists("Rental Driver", row.name):
@@ -82,8 +81,8 @@ def remind_driver_license_expiry():
 				"reference_type": "Rental Driver",
 				"reference_name": row.name,
 				"allocated_to": assignee,
-				"priority": "Medium",
-			}
+				"priority": "Medium"
+	}
 		).insert(ignore_permissions=True)
 
 

@@ -103,7 +103,8 @@ def toll_apply_fx(toll_transaction: str):
 	from omnexa_car_rental.omnexa_car_rental.toll.toll_engine import apply_fx_to_company_currency
 
 	apply_fx_to_company_currency(toll_transaction)
-	return {"ok": True}
+	return {"ok": True
+	}
 
 
 @frappe.whitelist()
@@ -156,8 +157,8 @@ def create_rental_contract_from_booking(booking: str):
 			"rental_mode": b.rental_mode,
 			"contract_start": b.start_datetime,
 			"contract_end": b.end_datetime,
-			"status": "Draft",
-		}
+			"status": "Draft"
+	}
 	)
 	c.insert()
 	return c.name

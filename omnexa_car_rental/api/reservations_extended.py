@@ -12,7 +12,8 @@ from frappe import _
 @frappe.whitelist()
 def create_group_booking(corporate_account: str, vehicle_count: int, start_datetime: str, end_datetime: str) -> dict:
 	corp = frappe.get_doc("Rental Corporate Account", corporate_account)
-	branch = frappe.db.get_value("Branch", {"company": corp.company}, "name")
+	branch = frappe.db.get_value("Branch", {"company": corp.company
+	}, "name")
 	doc = frappe.get_doc(
 		{
 			"doctype": "Rental Group Booking",
@@ -22,11 +23,12 @@ def create_group_booking(corporate_account: str, vehicle_count: int, start_datet
 			"end_datetime": end_datetime,
 			"company": corp.company,
 			"branch": branch,
-			"status": "Confirmed",
-		}
+			"status": "Confirmed"
+	}
 	)
 	doc.insert()
-	return {"group_booking": doc.name}
+	return {"group_booking": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -36,7 +38,7 @@ def subscribe_rental_plan(customer_profile: str, plan_code: str) -> dict:
 		"customer_profile": customer_profile,
 		"plan": plan.name,
 		"monthly_fee": plan.monthly_fee,
-		"status": "Active",
+		"status": "Active"
 	}
 
 
@@ -65,4 +67,5 @@ def walk_in_kiosk_book(payload: str | dict) -> dict:
 @frappe.whitelist()
 def sync_ota_channel(channel_code: str) -> dict:
 	channel = frappe.get_doc("Rental OTA Channel", channel_code)
-	return {"channel": channel.name, "synced": True, "endpoint": channel.api_endpoint}
+	return {"channel": channel.name, "synced": True, "endpoint": channel.api_endpoint
+	}

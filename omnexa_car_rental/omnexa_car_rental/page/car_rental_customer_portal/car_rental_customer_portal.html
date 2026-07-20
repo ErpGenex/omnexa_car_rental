@@ -1,0 +1,294 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{{ _("Customer Portal") }} - Omnexa Car Rental{% endblock %}
+
+{% block style %}
+<style>
+	.customer-portal {
+		padding: 24px;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	.portal-header {
+		background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+		color: white;
+		padding: 32px;
+		border-radius: 16px;
+		margin-bottom: 32px;
+	}
+	.portal-stats {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		gap: 16px;
+		margin-bottom: 32px;
+	}
+	.stat-card {
+		background: white;
+		padding: 24px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		text-align: center;
+	}
+	.stat-card h3 {
+		font-size: 2rem;
+		margin: 8px 0;
+		color: #2196f3;
+	}
+	.stat-card p {
+		color: #666;
+		margin: 0;
+	}
+	.portal-section {
+		background: white;
+		padding: 24px;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+		margin-bottom: 24px;
+	}
+	.portal-section h2 {
+		margin-bottom: 20px;
+		color: #333;
+	}
+	.table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+	.table th,
+	.table td {
+		padding: 12px;
+		text-align: left;
+		border-bottom: 1px solid #eee;
+	}
+	.table th {
+		background: #f5f5f5;
+		font-weight: 600;
+	}
+	.vehicles-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 16px;
+	}
+	.vehicle-card {
+		border: 1px solid #eee;
+		border-radius: 8px;
+		padding: 16px;
+		text-align: center;
+	}
+	.vehicle-card img {
+		max-width: 100%;
+		height: 180px;
+		object-fit: cover;
+		border-radius: 4px;
+		margin-bottom: 12px;
+	}
+	.btn {
+		padding: 8px 16px;
+		border-radius: 6px;
+		border: none;
+		cursor: pointer;
+		font-weight: 500;
+	}
+	.btn-primary {
+		background: #2196f3;
+		color: white;
+	}
+	.btn-primary:hover {
+		background: #1976d2;
+	}
+	.btn-secondary {
+		background: #f5f5f5;
+		color: #333;
+	}
+	.btn-secondary:hover {
+		background: #e0e0e0;
+	}
+	.booking-form {
+		background: #f9f9f9;
+		padding: 20px;
+		border-radius: 8px;
+		margin-bottom: 24px;
+	}
+	.form-group {
+		margin-bottom: 16px;
+	}
+	.form-group label {
+		display: block;
+		margin-bottom: 8px;
+		font-weight: 500;
+	}
+	.form-group input,
+	.form-group select {
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #ddd;
+		border-radius: 6px;
+	}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="customer-portal">
+	<div class="portal-header">
+		<h1>{{ _("Car Rental Customer Portal") }}</h1>
+		<p>{{ _("Welcome") }}{% if context.customer %}, {{ context.customer.customer_name }}{% endif %}</p>
+	</div>
+
+	<div class="portal-stats">
+		<div class="stat-card">
+			<h3>{{ context.stats.total_bookings or 0 }}</h3>
+			<p>{{ _("Total Bookings") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.active_bookings or 0 }}</h3>
+			<p>{{ _("Active Bookings") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.completed_bookings or 0 }}</h3>
+			<p>{{ _("Completed Bookings") }}</p>
+		</div>
+		<div class="stat-card">
+			<h3>{{ context.stats.total_invoices or 0 }}</h3>
+			<p>{{ _("Total Invoices") }}</p>
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Book a Vehicle") }}</h2>
+		<div class="booking-form">
+			<div class="form-group">
+				<label>{{ _("Select Vehicle") }}</label>
+				<select id="vehicle-select">
+					<option value="">{{ _("Choose a vehicle") }}</option>
+					{% for vehicle in context.vehicles %}
+					<option value="{{ vehicle.name }}">{{ vehicle.vehicle_name }} - {{ vehicle.license_plate }}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="form-group">
+				<label>{{ _("From Date") }}</label>
+				<input type="date" id="from-date">
+			</div>
+			<div class="form-group">
+				<label>{{ _("To Date") }}</label>
+				<input type="date" id="to-date">
+			</div>
+			<button class="btn btn-primary" onclick="submitBooking()">{{ _("Book Now") }}</button>
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Available Vehicles") }}</h2>
+		<div class="vehicles-grid">
+			{% for vehicle in context.vehicles %}
+			<div class="vehicle-card">
+				{% if vehicle.image %}
+				<img src="{{ vehicle.image }}" alt="{{ vehicle.vehicle_name }}">
+				{% endif %}
+				<h3>{{ vehicle.vehicle_name }}</h3>
+				<p>{{ _("License Plate") }}: {{ vehicle.license_plate }}</p>
+				<p>{{ _("Type") }}: {{ vehicle.vehicle_type }}</p>
+				<p>{{ _("Daily Rate") }}: {{ vehicle.daily_rate }}</p>
+				<button class="btn btn-primary" onclick="selectVehicle('{{ vehicle.name }}')">{{ _("Book This Vehicle") }}</button>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Recent Bookings") }}</h2>
+		{% if context.bookings %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{ _("Booking ID") }}</th>
+					<th>{{ _("Booking Date") }}</th>
+					<th>{{ _("From Date") }}</th>
+					<th>{{ _("To Date") }}</th>
+					<th>{{ _("Status") }}</th>
+					<th>{{ _("Total Amount") }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for booking in context.bookings %}
+				<tr>
+					<td>{{ booking.name }}</td>
+					<td>{{ booking.booking_date }}</td>
+					<td>{{ booking.from_date }}</td>
+					<td>{{ booking.to_date }}</td>
+					<td>{{ booking.status }}</td>
+					<td>{{ booking.total_amount }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<p>{{ _("No bookings found") }}</p>
+		{% endif %}
+	</div>
+
+	<div class="portal-section">
+		<h2>{{ _("Recent Invoices") }}</h2>
+		{% if context.invoices %}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>{{ _("Invoice ID") }}</th>
+					<th>{{ _("Date") }}</th>
+					<th>{{ _("Total") }}</th>
+					<th>{{ _("Outstanding") }}</th>
+					<th>{{ _("Status") }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for invoice in context.invoices %}
+				<tr>
+					<td>{{ invoice.name }}</td>
+					<td>{{ invoice.posting_date }}</td>
+					<td>{{ invoice.grand_total }}</td>
+					<td>{{ invoice.outstanding_amount }}</td>
+					<td>{{ invoice.status }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% else %}
+		<p>{{ _("No invoices found") }}</p>
+		{% endif %}
+	</div>
+</div>
+
+<script>
+	function selectVehicle(vehicleCode) {
+		document.getElementById('vehicle-select').value = vehicleCode;
+		document.getElementById('vehicle-select').scrollIntoView({ behavior: 'smooth' });
+	}
+
+	function submitBooking() {
+		const vehicleSelect = document.getElementById('vehicle-select');
+		const fromDate = document.getElementById('from-date').value;
+		const toDate = document.getElementById('to-date').value;
+		
+		if (!vehicleSelect.value || !fromDate || !toDate) {
+			alert("Please fill in all fields");
+			return;
+		}
+
+		frappe.call({
+			method: "omnexa_car_rental.omnexa_car_rental.page.car_rental_customer_portal.car_rental_customer_portal.create_booking",
+			args: {
+				vehicle_code: vehicleSelect.value,
+				from_date: fromDate,
+				to_date: toDate
+			},
+			callback: function(r) {
+				if (r.message.success) {
+					alert("Booking created successfully: " + r.message.booking);
+					location.reload();
+				} else {
+					alert("Error: " + r.message.message);
+				}
+			}
+		});
+	}
+</script>
+{% endblock %}

@@ -60,10 +60,16 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Liability"), "fieldname": "liability_type", "fieldtype": "Data", "width": 160},
-		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110},
-		{"label": _("Reports"), "fieldname": "report_count", "fieldtype": "Int", "width": 90},
-		{"label": _("Estimated Cost"), "fieldname": "estimated_damage_cost", "fieldtype": "Currency", "width": 140},
-		{"label": _("Insurance Claims"), "fieldname": "insurance_claims", "fieldtype": "Int", "width": 130},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Liability"), "fieldname": "liability_type", "fieldtype": "Data", "width": 160
+	},
+		{"label": _("Status"), "fieldname": "status", "fieldtype": "Data", "width": 110
+	},
+		{"label": _("Reports"), "fieldname": "report_count", "fieldtype": "Int", "width": 90
+	},
+		{"label": _("Estimated Cost"), "fieldname": "estimated_damage_cost", "fieldtype": "Currency", "width": 140
+	},
+		{"label": _("Insurance Claims"), "fieldname": "insurance_claims", "fieldtype": "Int", "width": 130
+	},
 	]

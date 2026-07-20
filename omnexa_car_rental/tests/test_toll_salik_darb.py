@@ -25,8 +25,8 @@ class TestTollSalikDarb(FrappeTestCase):
 			"plateNumber": "DXB-1234",
 			"salikTagId": "TAG-001",
 			"gateName": "Al Safa",
-			"gateCode": "G01",
-		}
+			"gateCode": "G01"
+	}
 		out = adapt_provider_payload("SALIK", raw)
 		self.assertEqual(out["transaction_id"], "SAL-100")
 		self.assertEqual(out["amount"], 4)
@@ -41,8 +41,8 @@ class TestTollSalikDarb(FrappeTestCase):
 			"licensePlate": "AUH-5678",
 			"obu_id": "OBU-99",
 			"checkpoint": "Mussafah",
-			"checkpoint_code": "D01",
-		}
+			"checkpoint_code": "D01"
+	}
 		out = adapt_provider_payload("DARB", raw)
 		self.assertEqual(out["transaction_id"], "DARB-200")
 		self.assertEqual(out["plate_number"], "AUH-5678")
@@ -55,7 +55,8 @@ class TestTollSalikDarb(FrappeTestCase):
 		self.assertGreaterEqual(len(status["providers"]), 2)
 		# Reset cursor for repeatable sandbox ingest
 		for code in ("SALIK", "DARB"):
-			name = frappe.db.get_value("Toll Provider", {"provider_code": code}, "name")
+			name = frappe.db.get_value("Toll Provider", {"provider_code": code
+	}, "name")
 			frappe.db.set_value("Toll Provider", name, "last_sync_token", "")
 		frappe.db.commit()
 		result = sync_toll_provider("SALIK", force=1)
@@ -63,9 +64,11 @@ class TestTollSalikDarb(FrappeTestCase):
 
 	def test_webhook_ingest_salik_payload(self):
 		company = frappe.defaults.get_global_default("company") or frappe.get_all("Company", limit=1)[0].name
-		branch = frappe.db.get_value("Branch", {"company": company}, "name")
+		branch = frappe.db.get_value("Branch", {"company": company
+	}, "name")
 		payload = {
-			"transactionId": f"SAL-WH-{frappe.generate_hash(length=6)}",
+			"transactionId": f"SAL-WH-{frappe.generate_hash(length=6)
+	}",
 			"transactionDateTime": "2026-06-12 12:00:00",
 			"tollAmount": 4,
 			"currencyCode": "AED",
@@ -74,8 +77,8 @@ class TestTollSalikDarb(FrappeTestCase):
 			"gateName": "Webhook Gate",
 			"gateCode": "WH1",
 			"company": company,
-			"branch": branch,
-		}
+			"branch": branch
+	}
 		import json
 
 		result = ingest_payload("SALIK", json.dumps(payload), auto_match=True, auto_bill=False)

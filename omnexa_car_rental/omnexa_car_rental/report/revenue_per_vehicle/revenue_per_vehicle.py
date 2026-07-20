@@ -44,9 +44,13 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180},
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Contracts"), "fieldname": "contracts_count", "fieldtype": "Int", "width": 100},
-		{"label": _("Total Revenue"), "fieldname": "total_revenue", "fieldtype": "Currency", "width": 150},
+		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180
+	},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Contracts"), "fieldname": "contracts_count", "fieldtype": "Int", "width": 100
+	},
+		{"label": _("Total Revenue"), "fieldname": "total_revenue", "fieldtype": "Currency", "width": 150
+	},
 	]
 

@@ -21,11 +21,12 @@ def schedule_preventive_maintenance(vehicle: str, service_type: str, interval_km
 			"service_type": service_type,
 			"interval_km": interval_km,
 			"next_due_date": add_days(today(), 30),
-			"status": "Active",
-		}
+			"status": "Active"
+	}
 	)
 	doc.insert()
-	return {"schedule": doc.name}
+	return {"schedule": doc.name
+	}
 
 
 @frappe.whitelist()
@@ -40,8 +41,9 @@ def create_predictive_alert(vehicle: str, alert_type: str, severity: str = "Medi
 			"alert_type": alert_type,
 			"severity": severity,
 			"predicted_on": frappe.utils.now_datetime(),
-			"status": "Open",
-		}
+			"status": "Open"
+	}
 	)
 	doc.insert()
-	return {"alert": doc.name}
+	return {"alert": doc.name
+	}

@@ -41,8 +41,7 @@ def execute(filters=None):
 				"vehicle": row.vehicle,
 				"branch": row.branch,
 				"contracts_count": flt(row.contracts_count),
-				"utilization_percent": flt((flt(row.contracts_count) / total_contracts) * 100.0, 2),
-			}
+				"utilization_percent": flt((flt(row.contracts_count) / total_contracts) * 100.0, 2)}
 		)
 	columns = _columns()
 	chart = auto_chart_for_columns(data, columns)
@@ -51,9 +50,13 @@ def execute(filters=None):
 
 def _columns():
 	return [
-		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180},
-		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130},
-		{"label": _("Contracts"), "fieldname": "contracts_count", "fieldtype": "Int", "width": 110},
-		{"label": _("Utilization %"), "fieldname": "utilization_percent", "fieldtype": "Percent", "width": 120},
+		{"label": _("Vehicle"), "fieldname": "vehicle", "fieldtype": "Link", "options": "Vehicle", "width": 180
+	},
+		{"label": _("Branch"), "fieldname": "branch", "fieldtype": "Link", "options": "Branch", "width": 130
+	},
+		{"label": _("Contracts"), "fieldname": "contracts_count", "fieldtype": "Int", "width": 110
+	},
+		{"label": _("Utilization %"), "fieldname": "utilization_percent", "fieldtype": "Percent", "width": 120
+	},
 	]
 

@@ -20,7 +20,7 @@ def _rate_for_plan(plan: dict, rental_type: str) -> float:
 		"Daily": plan.get("daily_rate"),
 		"Weekly": plan.get("weekly_rate"),
 		"Monthly": plan.get("monthly_rate"),
-		"Long-term lease": plan.get("monthly_rate"),
+		"Long-term lease": plan.get("monthly_rate")
 	}
 	return flt(mapping.get(rental_type) or plan.get("daily_rate"))
 
@@ -35,23 +35,26 @@ def quote_rental_rate(
 	"""Return best active rate plan amount for a branch/group."""
 	if not (company and branch):
 		frappe.throw(_("Company and branch are required"))
-	filters = {"company": company, "branch": branch, "is_active": 1}
+	filters = {"company": company, "branch": branch, "is_active": 1
+	}
 	if vehicle_group:
 		filters["vehicle_group"] = vehicle_group
 	plan = frappe.db.get_value("Rental Rate Plan", filters, ["name", "hourly_rate", "daily_rate", "weekly_rate", "monthly_rate", "currency"], as_dict=True)
 	if not plan and vehicle_group:
 		plan = frappe.db.get_value(
 			"Rental Rate Plan",
-			{"company": company, "branch": branch, "is_active": 1},
+			{"company": company, "branch": branch, "is_active": 1
+	},
 			["name", "hourly_rate", "daily_rate", "weekly_rate", "monthly_rate", "currency"],
 			as_dict=True,
 		)
 	if not plan:
-		return {"amount": 0, "currency": frappe.db.get_value("Company", company, "default_currency"), "plan": None}
+		return {"amount": 0, "currency": frappe.db.get_value("Company", company, "default_currency"), "plan": None
+	}
 	return {
 		"amount": _rate_for_plan(plan, rental_type),
 		"currency": plan.currency or frappe.db.get_value("Company", company, "default_currency"),
-		"plan": plan.name,
+		"plan": plan.name
 	}
 
 
@@ -118,9 +121,10 @@ def book_rental_online(payload: str | dict) -> dict:
 			"booking_status": data.get("booking_status") or "Confirmed",
 			"estimated_amount": amount,
 			"currency": data.get("currency") or quote.get("currency"),
-			"booking_reference": data.get("booking_reference") or f"WEB-{datetime.now().strftime('%Y%m%d%H%M%S')}",
-		}
+			"booking_reference": data.get("booking_reference") or f"WEB-{datetime.now().strftime('%Y%m%d%H%M%S')}"
+	}
 	)
 	doc.flags.ignore_permissions = True
 	doc.insert(ignore_permissions=True)
-	return {"booking": doc.name, "estimated_amount": amount, "message": _("Booking created successfully.")}
+	return {"booking": doc.name, "estimated_amount": amount, "message": _("Booking created successfully.")
+	}
