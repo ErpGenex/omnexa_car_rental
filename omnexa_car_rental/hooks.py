@@ -31,6 +31,11 @@ add_to_apps_screen = [
 web_include_css = "/assets/omnexa_car_rental/css/car_rental_website.css"
 web_include_js = "/assets/omnexa_car_rental/js/car_rental_website.js"
 
+# Public website routes
+website_route_rules = [
+	{"from_route": "/car-rental", "to_route": "car-rental/index"}
+]
+
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "omnexa_car_rental/public/scss/website"
 
